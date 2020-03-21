@@ -1,3 +1,5 @@
+release/calcButton.o
+release/numButton.o
 release/divideExpression.o
 release/sqrtExpression.o
 release/buttonWidget.o
@@ -5,6 +7,8 @@ release/mainWidget.o
 release/screenWidget.o
 release/main.o
 release/mainwindow.o
+release/moc_calcButton.o
+release/moc_numButton.o
 release/moc_buttonWidget.o
 release/moc_mainWidget.o
 release/moc_screenWidget.o

@@ -14,6 +14,8 @@ private:
     QLineEdit *screen;
 public:
     ScreenWidget(QWidget *parent = nullptr);
+private slots:
+    void handleNumClick(int value);
 };
 
 #endif // SCREENWIDGET_H

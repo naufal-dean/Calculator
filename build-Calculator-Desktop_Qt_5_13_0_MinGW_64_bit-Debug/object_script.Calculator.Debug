@@ -1,3 +1,5 @@
+debug/calcButton.o
+debug/numButton.o
 debug/divideExpression.o
 debug/sqrtExpression.o
 debug/buttonWidget.o
@@ -5,6 +7,8 @@ debug/mainWidget.o
 debug/screenWidget.o
 debug/main.o
 debug/mainwindow.o
+debug/moc_calcButton.o
+debug/moc_numButton.o
 debug/moc_buttonWidget.o
 debug/moc_mainWidget.o
 debug/moc_screenWidget.o

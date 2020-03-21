@@ -2,6 +2,10 @@
 
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent), screenWidget(new ScreenWidget), buttonWidget(new ButtonWidget)
 {
+    // Connect button and screen
+    connect(buttonWidget, SIGNAL(numClicked(int)), screenWidget, SLOT(handleNumClick(int)));
+
+    // Setting layout
     mainLayout = new QGridLayout;
 
     mainLayout->addWidget(screenWidget, 0, 0);

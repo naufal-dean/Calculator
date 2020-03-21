@@ -16,6 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    buttons/calcButton.cpp \
+    buttons/numButton.cpp \
     expressions/divideExpression.cpp \
     expressions/sqrtExpression.cpp \
     widgets/buttonWidget.cpp \
@@ -25,6 +27,8 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    buttons/calcButton.h \
+    buttons/numButton.h \
     expressions/addExpression.h \
     expressions/binaryExpression.h \
     expressions/divideExpression.h \
