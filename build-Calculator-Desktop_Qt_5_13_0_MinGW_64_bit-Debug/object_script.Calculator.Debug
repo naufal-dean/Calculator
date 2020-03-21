@@ -1,4 +1,5 @@
 debug/buttonWidget.o
+debug/divideExpression.o
 debug/main.o
 debug/mainWidget.o
 debug/mainwindow.o

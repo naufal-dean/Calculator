@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     buttonWidget.cpp \
+    divideExpression.cpp \
     main.cpp \
     mainWidget.cpp \
     mainwindow.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     mainWidget.h \
     mainwindow.h \
     multiplyExpression.h \
+    negativeExpression.h \
     screenWidget.h \
     sqrtExpression.h \
     substractExpression.h \

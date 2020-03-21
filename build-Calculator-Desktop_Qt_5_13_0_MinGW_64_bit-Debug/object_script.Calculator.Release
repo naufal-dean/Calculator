@@ -1,4 +1,5 @@
 release/buttonWidget.o
+release/divideExpression.o
 release/main.o
 release/mainWidget.o
 release/mainwindow.o
