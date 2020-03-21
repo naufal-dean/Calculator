@@ -16,31 +16,29 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    buttonWidget.cpp \
-    divideExpression.cpp \
+    expressions/divideExpression.cpp \
+    expressions/sqrtExpression.cpp \
+    widgets/buttonWidget.cpp \
+    widgets/mainWidget.cpp \
+    widgets/screenWidget.cpp \
     main.cpp \
-    mainWidget.cpp \
-    mainwindow.cpp \
-    screenWidget.cpp \
-    sqrtExpression.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    addExpression.h \
-    baseException.h \
-    binaryExpression.h \
-    buttonWidget.h \
-    divideExpression.h \
-    expression.h \
-    mainWidget.h \
-    mainwindow.h \
-    multiplyExpression.h \
-    negativeExpression.h \
-    screenWidget.h \
-    sqrtExpression.h \
-    substractExpression.h \
-    terminalExpression.h \
-    unaryExpression.h \
-    unrealNumberException.h
+    expressions/addExpression.h \
+    expressions/binaryExpression.h \
+    expressions/divideExpression.h \
+    expressions/expression.h \
+    expressions/multiplyExpression.h \
+    expressions/negativeExpression.h \
+    expressions/sqrtExpression.h \
+    expressions/substractExpression.h \
+    expressions/terminalExpression.h \
+    expressions/unaryExpression.h \
+    widgets/buttonWidget.h \
+    widgets/mainWidget.h \
+    widgets/screenWidget.h \
+    mainwindow.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

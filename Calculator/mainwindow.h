@@ -6,7 +6,7 @@
 #include <QGridLayout>
 #include <QPlainTextEdit>
 
-#include "mainWidget.h"
+#include "widgets/mainWidget.h"
 
 class MainWindow : public QMainWindow
 {

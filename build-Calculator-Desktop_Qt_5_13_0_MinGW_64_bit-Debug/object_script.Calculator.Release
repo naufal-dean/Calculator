@@ -1,11 +1,11 @@
-release/buttonWidget.o
 release/divideExpression.o
-release/main.o
-release/mainWidget.o
-release/mainwindow.o
-release/screenWidget.o
 release/sqrtExpression.o
+release/buttonWidget.o
+release/mainWidget.o
+release/screenWidget.o
+release/main.o
+release/mainwindow.o
 release/moc_buttonWidget.o
 release/moc_mainWidget.o
-release/moc_mainwindow.o
 release/moc_screenWidget.o
+release/moc_mainwindow.o
