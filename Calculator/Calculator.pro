@@ -18,7 +18,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     buttonWidget.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainWidget.cpp \
+    mainwindow.cpp \
+    screenWidget.cpp \
+    sqrtExpression.cpp
 
 HEADERS += \
     addExpression.h \
@@ -26,8 +29,11 @@ HEADERS += \
     buttonWidget.h \
     divideExpression.h \
     expression.h \
+    mainWidget.h \
     mainwindow.h \
     multiplyExpression.h \
+    screenWidget.h \
+    sqrtExpression.h \
     substractExpression.h \
     terminalExpression.h \
     unaryExpression.h

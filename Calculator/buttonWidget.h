@@ -7,6 +7,7 @@
 
 class ButtonWidget : public QWidget
 {
+    Q_OBJECT
 public:
     ButtonWidget(QWidget *parent = nullptr);
 private:

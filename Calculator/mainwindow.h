@@ -6,7 +6,7 @@
 #include <QGridLayout>
 #include <QPlainTextEdit>
 
-#include "buttonWidget.h"
+#include "mainWidget.h"
 
 class MainWindow : public QMainWindow
 {
@@ -17,6 +17,6 @@ public:
     ~MainWindow();
 
 private:
-    ButtonWidget *buttonWidget;
+    MainWidget *mainWidget;
 };
 #endif // MAINWINDOW_H

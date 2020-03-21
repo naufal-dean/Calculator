@@ -1,7 +1,6 @@
 #include "buttonWidget.h"
 
-ButtonWidget::ButtonWidget(QWidget *parent)
-    : QWidget(parent)
+ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
 {
     btn1 = new QPushButton("1");
     btn2 = new QPushButton("2");

@@ -1,0 +1,10 @@
+debug/buttonWidget.o
+debug/main.o
+debug/mainWidget.o
+debug/mainwindow.o
+debug/screenWidget.o
+debug/sqrtExpression.o
+debug/moc_buttonWidget.o
+debug/moc_mainWidget.o
+debug/moc_mainwindow.o
+debug/moc_screenWidget.o

@@ -1,0 +1,10 @@
+release/buttonWidget.o
+release/main.o
+release/mainWidget.o
+release/mainwindow.o
+release/screenWidget.o
+release/sqrtExpression.o
+release/moc_buttonWidget.o
+release/moc_mainWidget.o
+release/moc_mainwindow.o
+release/moc_screenWidget.o
