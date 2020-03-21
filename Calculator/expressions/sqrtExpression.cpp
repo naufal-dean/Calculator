@@ -2,7 +2,6 @@
 
 SqrtExpression::SqrtExpression(Expression<double> *x) : UnaryExpression<double>(x) {}
 
-double SqrtExpression::solve()
-{
+double SqrtExpression::solve() {
        return sqrt(this->x->solve());
 }
