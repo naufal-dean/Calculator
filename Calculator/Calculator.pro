@@ -26,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     addExpression.h \
+    baseException.h \
     binaryExpression.h \
     buttonWidget.h \
     divideExpression.h \
@@ -38,7 +39,8 @@ HEADERS += \
     sqrtExpression.h \
     substractExpression.h \
     terminalExpression.h \
-    unaryExpression.h
+    unaryExpression.h \
+    unrealNumberException.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

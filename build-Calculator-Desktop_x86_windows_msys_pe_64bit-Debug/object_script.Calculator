@@ -1,0 +1,11 @@
+buttonWidget.o
+divideExpression.o
+main.o
+mainWidget.o
+mainwindow.o
+screenWidget.o
+sqrtExpression.o
+moc_buttonWidget.o
+moc_mainWidget.o
+moc_mainwindow.o
+moc_screenWidget.o
