@@ -21,8 +21,16 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    addExpression.h \
+    binaryExpression.h \
     buttonWidget.h \
-    mainwindow.h
+    divideExpression.h \
+    expression.h \
+    mainwindow.h \
+    multiplyExpression.h \
+    substractExpression.h \
+    terminalExpression.h \
+    unaryExpression.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
