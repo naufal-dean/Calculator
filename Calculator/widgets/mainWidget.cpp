@@ -4,6 +4,7 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent), screenWidget(new Scre
 {
     // Connect button and screen
     connect(buttonWidget, SIGNAL(numClicked(int)), screenWidget, SLOT(handleNumClick(int)));
+    connect(buttonWidget, SIGNAL(backspaceClicked()), screenWidget, SLOT(handleBackspaceClick()));
 
     // Setting layout
     mainLayout = new QGridLayout;

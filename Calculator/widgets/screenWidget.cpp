@@ -22,3 +22,12 @@ void ScreenWidget::handleNumClick(int value) {
         screen->setText(screen->text().append(QString::number(value)));
     }
 }
+
+void ScreenWidget::handleBackspaceClick() {
+    int textLen = screen->text().length();
+    if (textLen == 1) {
+        screen->setText("0");
+    } else {
+        screen->setText(screen->text().mid(0, textLen - 1));
+    }
+}

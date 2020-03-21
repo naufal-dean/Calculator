@@ -1,3 +1,4 @@
+release/backspaceButton.o
 release/calcButton.o
 release/numButton.o
 release/divideExpression.o
@@ -7,6 +8,7 @@ release/mainWidget.o
 release/screenWidget.o
 release/main.o
 release/mainwindow.o
+release/moc_backspaceButton.o
 release/moc_calcButton.o
 release/moc_numButton.o
 release/moc_buttonWidget.o

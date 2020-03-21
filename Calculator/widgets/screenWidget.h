@@ -16,6 +16,7 @@ public:
     ScreenWidget(QWidget *parent = nullptr);
 private slots:
     void handleNumClick(int value);
+    void handleBackspaceClick();
 };
 
 #endif // SCREENWIDGET_H
