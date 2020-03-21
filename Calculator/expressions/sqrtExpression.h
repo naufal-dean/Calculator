@@ -4,11 +4,10 @@
 #include <cmath>
 #include "unaryExpression.h"
 
-class SqrtExpression : public UnaryExpression<double>
-{
-public:
-    SqrtExpression(Expression<double> *x);
-    double solve() override;
+class SqrtExpression : public UnaryExpression<double> {
+    public:
+        SqrtExpression(Expression<double> *x);
+        double solve() override;
 };
 
 #endif // SQRTEXPRESSION_H
