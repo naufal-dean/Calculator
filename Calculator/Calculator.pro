@@ -28,6 +28,8 @@ HEADERS += \
     expression.h \
     mainwindow.h \
     multiplyExpression.h \
+    negativeExpression.h \
+    sqrtExpression.h \
     substractExpression.h \
     terminalExpression.h \
     unaryExpression.h
