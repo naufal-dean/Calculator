@@ -9,7 +9,7 @@ class ModuloExpression : public BinaryExpression<T> {
     public:
         ModuloExpression(Expression<T> *x, Expression<T> *y) : BinaryExpression<T> (x, y) {}
         T solve() override {
-            return mod(x->solve(), y->solve());
+            return x->solve() % y->solve();
         }
 };
 
