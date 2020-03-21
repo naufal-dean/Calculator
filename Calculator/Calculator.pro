@@ -31,6 +31,9 @@ HEADERS += \
     buttons/backspaceButton.h \
     buttons/calcButton.h \
     buttons/numButton.h \
+    exception/baseException.h \
+    exception/undefinedNumberException.h \
+    exception/unrealNumberException.h \
     expressions/addExpression.h \
     expressions/binaryExpression.h \
     expressions/divideExpression.h \
