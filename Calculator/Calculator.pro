@@ -47,6 +47,7 @@ HEADERS += \
     expressions/substractExpression.h \
     expressions/terminalExpression.h \
     expressions/unaryExpression.h \
+    parser.h \
     widgets/buttonWidget.h \
     widgets/mainWidget.h \
     widgets/screenWidget.h \

@@ -6,4 +6,6 @@
 #define BIN_OP_MUL QChar(0x00D7)
 #define BIN_OP_DIV QChar(0x00F7)
 
+#define UN_OP_MIN "-"
+
 #endif // CONSTANTS_H

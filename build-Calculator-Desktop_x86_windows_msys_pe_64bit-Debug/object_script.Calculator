@@ -1,4 +1,5 @@
 backspaceButton.o
+binaryOpButton.o
 calcButton.o
 numButton.o
 divideExpression.o
@@ -9,6 +10,7 @@ screenWidget.o
 main.o
 mainwindow.o
 moc_backspaceButton.o
+moc_binaryOpButton.o
 moc_calcButton.o
 moc_numButton.o
 moc_buttonWidget.o
