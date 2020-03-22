@@ -3,22 +3,24 @@
 
 #include "calcButton.h"
 
+/*
+ * Class ini merupakan representasi backend dari tombol angka
+ */
 class NumButton : public CalcButton
 {    
-// Class ini merupakan representasi backend dari tombol angka
     Q_OBJECT
 private:
-    int value;
+    int value; //! Member untuk menyimpan nilai dari button
 public:
-    // Konstruktor kelas
+    //! Konstruktor kelas
     NumButton(int value);
-    // Getter value
+    //! Getter value
     int getValue();
 signals:
-    // Sinyal bahwa tombol angka diklik
+    //! Sinyal bahwa tombol angka diklik
     void numClicked(int value);
 private slots:
-    // Metode untuk menyalurkan sinyal clicked QPushButton ke numClicked sekaligus menyalurkan value
+    //! Metode untuk menyalurkan sinyal clicked QPushButton ke numClicked sekaligus menyalurkan value
     void handleClick();
 };
 

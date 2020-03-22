@@ -5,7 +5,7 @@
 
 /*
  *  Implementasi Class Excpetion yang akan menghandle apabila
- * terdapat penggunaan operator yang tidak sesuai
+ *  terdapat penggunaan operator yang tidak sesuai
  */
 class SyntaxErrorException : public BaseException {
 public:

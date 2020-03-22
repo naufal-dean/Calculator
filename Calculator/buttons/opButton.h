@@ -3,19 +3,21 @@
 
 #include "calcButton.h"
 
+/*
+ * Class ini merupakan representasi backend dari tombol operasi
+ */
 class OpButton : public CalcButton
 {    
-// Class ini merupakan representasi backend dari tombol operasi
     Q_OBJECT
 protected:
-    QString type;
+    QString type; //! Member untuk menyimpan jenis operator
 public:
-    // Konstruktor kelas
+    //! Konstruktor kelas
     OpButton(QString type);
-    // Getter type
+    //! Getter type
     QString getType();
 private slots:
-    // Metode abstract untuk menyalurkan sinyal clicked dari QPushButton
+    //! Metode abstract untuk menyalurkan sinyal clicked dari QPushButton
     virtual void handleClick() = 0;
 };
 

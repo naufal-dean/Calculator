@@ -6,17 +6,19 @@
 #include "screenWidget.h"
 #include "buttonWidget.h"
 
+/*
+ * Class widget utama yang menyalurkan input dari ButtonWidget ke output pada ScreenWidget
+ */
 class MainWidget : public QWidget
 {
-// Class widget utama yang menyalurkan input dari ButtonWidget ke output pada ScreenWidget
     Q_OBJECT
 private:
-    QGridLayout *mainLayout;
-    ScreenWidget *screenWidget;
-    ButtonWidget *buttonWidget;
+    QGridLayout *mainLayout; //! Layout utama main widget
+    ScreenWidget *screenWidget; //! Member layar kalkulator
+    ButtonWidget *buttonWidget; //! Member button kalkulator
 
 public:
-    // Konstruktor kelas
+    //! Konstruktor kelas
     MainWidget(QWidget *parent = nullptr);
 };
 

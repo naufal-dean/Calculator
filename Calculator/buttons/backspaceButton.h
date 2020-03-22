@@ -3,18 +3,20 @@
 
 #include "calcButton.h"
 
+/*
+ * Class ini merupakan representasi backend dari tombol backspace
+ */
 class BackspaceButton : public CalcButton
 {    
-// Class ini merupakan representasi backend dari tombol backspace
     Q_OBJECT
 public:
-    // Konstruktor kelas
+    //! Konstruktor kelas
     BackspaceButton();
 signals:    
-    // Sinyal bahwa tombol backspace diklik
+    //! Sinyal bahwa tombol backspace diklik
     void backspaceClicked();
 private slots:
-    // Metode untuk menyalurkan sinyal clicked QPushButton ke backspaceClicked
+    //! Metode untuk menyalurkan sinyal clicked QPushButton ke backspaceClicked
     void handleClick();
 };
 

@@ -1852,7 +1852,6 @@ debug/moc_mainWidget.cpp: ../Calculator/widgets/mainWidget.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
@@ -2010,7 +2009,6 @@ debug/moc_screenWidget.cpp: ../Calculator/widgets/screenWidget.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		debug/moc_predefs.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/bin/moc.exe
@@ -2170,7 +2168,6 @@ debug/moc_mainwindow.cpp: ../Calculator/mainwindow.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
@@ -3833,7 +3830,6 @@ debug/parser.o: ../Calculator/parser.cpp ../Calculator/parser.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		../Calculator/constants/constants.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/qdebug.h \
@@ -4134,7 +4130,6 @@ debug/mainWidget.o: ../Calculator/widgets/mainWidget.cpp ../Calculator/widgets/m
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
@@ -4290,7 +4285,6 @@ debug/screenWidget.o: ../Calculator/widgets/screenWidget.cpp ../Calculator/widge
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\screenWidget.o ..\Calculator\widgets\screenWidget.cpp
 
@@ -4448,7 +4442,6 @@ debug/main.o: ../Calculator/main.cpp ../Calculator/mainwindow.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
@@ -4626,7 +4619,6 @@ debug/mainwindow.o: ../Calculator/mainwindow.cpp ../Calculator/mainwindow.h \
 		../Calculator/expressions/sqrtExpression.h \
 		../Calculator/exceptions/negativeSqrtException.h \
 		../Calculator/expressions/negativeExpression.h \
-		../Calculator/expressions/absoluteExpression.h \
 		E:/PROGRAMMING/Qt/5.13.0/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \

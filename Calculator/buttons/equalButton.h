@@ -3,18 +3,20 @@
 
 #include "calcButton.h"
 
+/*
+ * Class ini merupakan representasi backend dari tombol sama dengan
+ */
 class EqualButton : public CalcButton
 {    
-// Class ini merupakan representasi backend dari tombol sama dengan
     Q_OBJECT
 public:
-    // Konstruktor kelas
+    //! Konstruktor kelas
     EqualButton();
 signals:
-    // Sinyal bahwa tombol sama dengan diklik
+    //! Sinyal bahwa tombol sama dengan diklik
     void equalClicked();
 private slots:
-    // Metode untuk menyalurkan sinyal clicked QPushButton ke equalClicked
+    //! Metode untuk menyalurkan sinyal clicked QPushButton ke equalClicked
     void handleClick();
 };
 
