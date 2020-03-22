@@ -12,6 +12,7 @@ using namespace std;
 
 class ScreenWidget : public QWidget
 {
+// Class widget yang mengatur layar kalkulator beserta handler input dari button
     Q_OBJECT
 private:
     QGridLayout *mainLayout;
@@ -20,8 +21,10 @@ private:
     QString lastAns;
     static queue <QString> MC;
 public:
+    // Konstruktor kelas
     ScreenWidget(QWidget *parent = nullptr);
 private slots:
+    // Metode untuk memberikan respon terhadap sinyal dari berbagai jenis button kalkulator
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
     void handleCommaClick();

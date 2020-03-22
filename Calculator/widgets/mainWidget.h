@@ -8,6 +8,7 @@
 
 class MainWidget : public QWidget
 {
+// Class widget utama yang menyalurkan input dari ButtonWidget ke output pada ScreenWidget
     Q_OBJECT
 private:
     QGridLayout *mainLayout;
@@ -15,6 +16,7 @@ private:
     ButtonWidget *buttonWidget;
 
 public:
+    // Konstruktor kelas
     MainWidget(QWidget *parent = nullptr);
 };
 
