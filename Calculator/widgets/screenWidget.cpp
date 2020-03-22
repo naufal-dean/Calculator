@@ -36,10 +36,22 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
     int textLen = screen->text().length();
     this->isAns = false;
     QChar lastChar = screen->text().data()[textLen - 1];
-    if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB || lastChar == BIN_OP_MUL || lastChar == BIN_OP_DIV) {
-        screen->setText(screen->text().mid(0, textLen - 1));
+    QChar secondLastChar = screen->text().data()[textLen - 2];
+
+    if (type == BIN_OP_SUB) {
+        if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB) {
+            screen->setText(screen->text().mid(0, textLen - 1));
+        }
+        screen->setText(screen->text().append(type));
+    } else {
+        if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB || lastChar == BIN_OP_MUL || lastChar == BIN_OP_DIV) {
+            screen->setText(screen->text().mid(0, textLen - 1));
+            if (!secondLastChar.isDigit()) {
+                screen->setText(screen->text().mid(0, textLen - 2));
+            }
+        }
+        screen->setText(screen->text().append(type));
     }
-    screen->setText(screen->text().append(type));
 }
 
 void ScreenWidget::handleCommaClick() {
