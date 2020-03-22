@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getmessage_54',['getMessage',['../class_base_exception.html#a8c17fb3b2d4d0783c78ef307d7ee9a5f',1,'BaseException']]],
-  ['gettype_55',['getType',['../class_op_button.html#ad719a9487eda32a49ded6e204d9498a2',1,'OpButton']]],
-  ['getvalue_56',['getValue',['../class_num_button.html#aef57b68b9a843f3fab1f08561829a12b',1,'NumButton']]]
+  ['getmessage_59',['getMessage',['../class_base_exception.html#a8c17fb3b2d4d0783c78ef307d7ee9a5f',1,'BaseException']]],
+  ['gettype_60',['getType',['../class_op_button.html#ad719a9487eda32a49ded6e204d9498a2',1,'OpButton']]],
+  ['getvalue_61',['getValue',['../class_num_button.html#aef57b68b9a843f3fab1f08561829a12b',1,'NumButton']]]
 ];

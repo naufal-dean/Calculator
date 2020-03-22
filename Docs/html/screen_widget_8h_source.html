@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator: Calculator/widgets/screenWidget.h Source File</title>
+<title>Calculator: Tubes OOP/Tubes-1-OOP/Calculator/widgets/screenWidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fddfb7624d5bf86fa4de64f5b593c83e.html">Calculator</a></li><li class="navelem"><a class="el" href="dir_17e03aa248be6b0596593578f486ce5d.html">widgets</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_03ea67d8f1950587dd6f5fda837a593e.html">Tubes OOP</a></li><li class="navelem"><a class="el" href="dir_fc976f281f96cc250b9d5a53af8cc495.html">Tubes-1-OOP</a></li><li class="navelem"><a class="el" href="dir_7c527767e95983b537e6457be9e0ff70.html">Calculator</a></li><li class="navelem"><a class="el" href="dir_55025102b31136bb76b7e89096c71c38.html">widgets</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -87,8 +87,8 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QGridLayout *mainLayout;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QLineEdit *screen;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> isAns;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">double</span> lastAns;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> isAns, isErr;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QString lastAns;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> queue &lt;QString&gt; MC;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_screen_widget.html">ScreenWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
@@ -102,9 +102,10 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> handleMCClick();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> handleMRClick();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> handleACClick();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // SCREENWIDGET_H</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> handleAnsClick();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // SCREENWIDGET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aconstants_8h_html_abdfe45ba580b5a9ee9da404361f84ac9"><div class="ttname"><a href="constants_8h.html#abdfe45ba580b5a9ee9da404361f84ac9">BIN_OP_DIV</a></div><div class="ttdeci">#define BIN_OP_DIV</div><div class="ttdef"><b>Definition:</b> constants.h:7</div></div>
 <div class="ttc" id="aconstants_8h_html_abbd3191ff0f1af4df33af650dc0d78c7"><div class="ttname"><a href="constants_8h.html#abbd3191ff0f1af4df33af650dc0d78c7">BIN_OP_MUL</a></div><div class="ttdeci">#define BIN_OP_MUL</div><div class="ttdef"><b>Definition:</b> constants.h:6</div></div>
@@ -114,10 +115,10 @@ $(function() {
 <div class="ttc" id="aconstants_8h_html_a68795862b84771f4d9411395cdeda1b2"><div class="ttname"><a href="constants_8h.html#a68795862b84771f4d9411395cdeda1b2">BIN_OP_SUB</a></div><div class="ttdeci">#define BIN_OP_SUB</div><div class="ttdef"><b>Definition:</b> constants.h:5</div></div>
 <div class="ttc" id="aclass_screen_widget_html_a59e1efb3d2617aa355b522dd51c79800"><div class="ttname"><a href="class_screen_widget.html#a59e1efb3d2617aa355b522dd51c79800">ScreenWidget::ScreenWidget</a></div><div class="ttdeci">ScreenWidget(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> screenWidget.cpp:7</div></div>
 <div class="ttc" id="aclass_base_exception_html"><div class="ttname"><a href="class_base_exception.html">BaseException</a></div><div class="ttdef"><b>Definition:</b> baseException.h:6</div></div>
-<div class="ttc" id="aclass_parser_html_ac59790fdbf3a61e30d7d22436137072e"><div class="ttname"><a href="class_parser.html#ac59790fdbf3a61e30d7d22436137072e">Parser::parser</a></div><div class="ttdeci">static void parser(QString input, long &amp;result)</div><div class="ttdef"><b>Definition:</b> parser.h:73</div></div>
 <div class="ttc" id="aclass_base_exception_html_a8c17fb3b2d4d0783c78ef307d7ee9a5f"><div class="ttname"><a href="class_base_exception.html#a8c17fb3b2d4d0783c78ef307d7ee9a5f">BaseException::getMessage</a></div><div class="ttdeci">QString getMessage()</div><div class="ttdef"><b>Definition:</b> baseException.cpp:7</div></div>
 <div class="ttc" id="aconstants_8h_html_acd4ef14b4a960a7fdcddaf5eb947b08a"><div class="ttname"><a href="constants_8h.html#acd4ef14b4a960a7fdcddaf5eb947b08a">BIN_OP_ADD</a></div><div class="ttdeci">#define BIN_OP_ADD</div><div class="ttdef"><b>Definition:</b> constants.h:4</div></div>
 <div class="ttc" id="ascreen_widget_8h_html"><div class="ttname"><a href="screen_widget_8h.html">screenWidget.h</a></div></div>
+<div class="ttc" id="aclass_parser_html_a858d70c460577188c885f5665369f0d7"><div class="ttname"><a href="class_parser.html#a858d70c460577188c885f5665369f0d7">Parser::parser</a></div><div class="ttdeci">static void parser(QString input, long &amp;result)</div><div class="ttdef"><b>Definition:</b> parser.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

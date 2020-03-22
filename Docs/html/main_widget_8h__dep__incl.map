@@ -1,7 +1,7 @@
-<map id="Calculator/widgets/mainWidget.h" name="Calculator/widgets/mainWidget.h">
-<area shape="rect" id="node1" title=" " alt="" coords="186,5,314,47"/>
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title=" " alt="" coords="82,102,247,129"/>
-<area shape="rect" id="node5" href="$main_widget_8cpp.html" title=" " alt="" coords="271,95,399,136"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="5,184,143,211"/>
-<area shape="rect" id="node4" href="$mainwindow_8cpp.html" title=" " alt="" coords="167,184,346,211"/>
+<map id="Tubes OOP/Tubes&#45;1&#45;OOP/Calculator/widgets/mainWidget.h" name="Tubes OOP/Tubes&#45;1&#45;OOP/Calculator/widgets/mainWidget.h">
+<area shape="rect" id="node1" title=" " alt="" coords="199,5,415,47"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title=" " alt="" coords="107,95,280,136"/>
+<area shape="rect" id="node5" href="$main_widget_8cpp.html" title=" " alt="" coords="305,95,535,136"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="5,184,179,225"/>
+<area shape="rect" id="node4" href="$mainwindow_8cpp.html" title=" " alt="" coords="203,184,386,225"/>
 </map>

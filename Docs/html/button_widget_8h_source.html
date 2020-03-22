@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Calculator: Calculator/widgets/buttonWidget.h Source File</title>
+<title>Calculator: Tubes OOP/Tubes-1-OOP/Calculator/widgets/buttonWidget.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fddfb7624d5bf86fa4de64f5b593c83e.html">Calculator</a></li><li class="navelem"><a class="el" href="dir_17e03aa248be6b0596593578f486ce5d.html">widgets</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_03ea67d8f1950587dd6f5fda837a593e.html">Tubes OOP</a></li><li class="navelem"><a class="el" href="dir_fc976f281f96cc250b9d5a53af8cc495.html">Tubes-1-OOP</a></li><li class="navelem"><a class="el" href="dir_7c527767e95983b537e6457be9e0ff70.html">Calculator</a></li><li class="navelem"><a class="el" href="dir_55025102b31136bb76b7e89096c71c38.html">widgets</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -81,51 +81,56 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../buttons/numButton.h&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;../buttons/unaryOpButton.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../buttons/mcButton.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../constants/constants.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../buttons/acButton.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../buttons/mrButton.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_button_widget.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_button_widget.html">ButtonWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QGridLayout *mainLayout;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_backspace_button.html">BackspaceButton</a> *btnBs;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_binary_op_button.html">BinaryOpButton</a> *btnAdd, *btnSub, *btnMul, *btnDiv;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_comma_button.html">CommaButton</a> *btnComma;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_equal_button.html">EqualButton</a> *btnEq;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_num_button.html">NumButton</a> *btn0, *btn1, *btn2, *btn3, *btn4, *btn5, *btn6, *btn7, *btn8, *btn9;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_unary_op_button.html">UnaryOpButton</a> *btnSqrt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_m_c_button.html">MCButton</a> *btnMC;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_m_r_button.html">MRButton</a> *btnMR;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_a_c_button.html">ACButton</a> *btnAC;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="class_button_widget.html#adb3092f45266912526dec8951df5ff3a">ButtonWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;signals:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a5cbb07b5927036a085b544e6aee39ec8">backspaceClicked</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#ad115e243f948d11342927bac226746e5">binaryOpClicked</a>(QString type);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a88e38c602e87ef180b487d4c1d3e5fd2">commaClicked</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#ac81cdccf76f2d229621fca6bf12eefc2">equalClicked</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a1cce923ce7e4a0ef77c8cb6ff33a8df4">numClicked</a>(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a94f0a37e2bd2083e2d0cd5834aca4fdb">unaryOpClicked</a>(QString type);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#afcbdd823a5ba4fd46799722eececf122">mcClicked</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a584597680cc7f8a0501caaca46475a9d">mrClicked</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a22ec5caf6285835564d952593df65e5b">acClicked</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> handleBackspaceClick();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> handleBinaryOpClick(QString type);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> handleCommaClick();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> handleEqualClick();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> handleNumClick(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> handleUnaryOpClick(QString type);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> handleMCClick();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> handleMRClick();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> handleACClick();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif // BUTTONWIDGET_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../buttons/acButton.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../buttons/mrButton.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../buttons/ansButton.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../constants/constants.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_button_widget.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_button_widget.html">ButtonWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QGridLayout *mainLayout;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_backspace_button.html">BackspaceButton</a> *btnBs;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_binary_op_button.html">BinaryOpButton</a> *btnAdd, *btnSub, *btnMul, *btnDiv;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_comma_button.html">CommaButton</a> *btnComma;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_equal_button.html">EqualButton</a> *btnEq;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_num_button.html">NumButton</a> *btn0, *btn1, *btn2, *btn3, *btn4, *btn5, *btn6, *btn7, *btn8, *btn9;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_unary_op_button.html">UnaryOpButton</a> *btnSqrt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_m_c_button.html">MCButton</a> *btnMC;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_m_r_button.html">MRButton</a> *btnMR;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_a_c_button.html">ACButton</a> *btnAC;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_ans_button.html">AnsButton</a> *btnAns;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_button_widget.html#adb3092f45266912526dec8951df5ff3a">ButtonWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;signals:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a5cbb07b5927036a085b544e6aee39ec8">backspaceClicked</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#ad115e243f948d11342927bac226746e5">binaryOpClicked</a>(QString type);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a88e38c602e87ef180b487d4c1d3e5fd2">commaClicked</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#ac81cdccf76f2d229621fca6bf12eefc2">equalClicked</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a1cce923ce7e4a0ef77c8cb6ff33a8df4">numClicked</a>(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a94f0a37e2bd2083e2d0cd5834aca4fdb">unaryOpClicked</a>(QString type);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#afcbdd823a5ba4fd46799722eececf122">mcClicked</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a584597680cc7f8a0501caaca46475a9d">mrClicked</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a22ec5caf6285835564d952593df65e5b">acClicked</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_button_widget.html#a801c9efdecde7eee927e7ae8a304d9b6">ansClicked</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> handleBackspaceClick();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> handleBinaryOpClick(QString type);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> handleCommaClick();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> handleEqualClick();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> handleNumClick(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> handleUnaryOpClick(QString type);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> handleMCClick();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> handleMRClick();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> handleACClick();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> handleAnsClick();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif // BUTTONWIDGET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_button_widget_html_a801c9efdecde7eee927e7ae8a304d9b6"><div class="ttname"><a href="class_button_widget.html#a801c9efdecde7eee927e7ae8a304d9b6">ButtonWidget::ansClicked</a></div><div class="ttdeci">void ansClicked()</div></div>
 <div class="ttc" id="aclass_button_widget_html_a22ec5caf6285835564d952593df65e5b"><div class="ttname"><a href="class_button_widget.html#a22ec5caf6285835564d952593df65e5b">ButtonWidget::acClicked</a></div><div class="ttdeci">void acClicked()</div></div>
 <div class="ttc" id="abutton_widget_8h_html"><div class="ttname"><a href="button_widget_8h.html">buttonWidget.h</a></div></div>
 <div class="ttc" id="aconstants_8h_html_abdfe45ba580b5a9ee9da404361f84ac9"><div class="ttname"><a href="constants_8h.html#abdfe45ba580b5a9ee9da404361f84ac9">BIN_OP_DIV</a></div><div class="ttdeci">#define BIN_OP_DIV</div><div class="ttdef"><b>Definition:</b> constants.h:7</div></div>
@@ -139,8 +144,9 @@ $(function() {
 <div class="ttc" id="aclass_m_r_button_html"><div class="ttname"><a href="class_m_r_button.html">MRButton</a></div><div class="ttdef"><b>Definition:</b> mrButton.h:6</div></div>
 <div class="ttc" id="aclass_button_widget_html_adb3092f45266912526dec8951df5ff3a"><div class="ttname"><a href="class_button_widget.html#adb3092f45266912526dec8951df5ff3a">ButtonWidget::ButtonWidget</a></div><div class="ttdeci">ButtonWidget(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> buttonWidget.cpp:3</div></div>
 <div class="ttc" id="aclass_binary_op_button_html"><div class="ttname"><a href="class_binary_op_button.html">BinaryOpButton</a></div><div class="ttdef"><b>Definition:</b> binaryOpButton.h:6</div></div>
+<div class="ttc" id="aclass_ans_button_html"><div class="ttname"><a href="class_ans_button.html">AnsButton</a></div><div class="ttdef"><b>Definition:</b> ansButton.h:6</div></div>
 <div class="ttc" id="aclass_button_widget_html_a5cbb07b5927036a085b544e6aee39ec8"><div class="ttname"><a href="class_button_widget.html#a5cbb07b5927036a085b544e6aee39ec8">ButtonWidget::backspaceClicked</a></div><div class="ttdeci">void backspaceClicked()</div></div>
-<div class="ttc" id="aclass_button_widget_html"><div class="ttname"><a href="class_button_widget.html">ButtonWidget</a></div><div class="ttdef"><b>Definition:</b> buttonWidget.h:17</div></div>
+<div class="ttc" id="aclass_button_widget_html"><div class="ttname"><a href="class_button_widget.html">ButtonWidget</a></div><div class="ttdef"><b>Definition:</b> buttonWidget.h:18</div></div>
 <div class="ttc" id="aclass_num_button_html"><div class="ttname"><a href="class_num_button.html">NumButton</a></div><div class="ttdef"><b>Definition:</b> numButton.h:6</div></div>
 <div class="ttc" id="aconstants_8h_html_a95559de52a48e8cfde88c6e6e360813e"><div class="ttname"><a href="constants_8h.html#a95559de52a48e8cfde88c6e6e360813e">UN_OP_SQRT</a></div><div class="ttdeci">#define UN_OP_SQRT</div><div class="ttdef"><b>Definition:</b> constants.h:10</div></div>
 <div class="ttc" id="aclass_button_widget_html_ac81cdccf76f2d229621fca6bf12eefc2"><div class="ttname"><a href="class_button_widget.html#ac81cdccf76f2d229621fca6bf12eefc2">ButtonWidget::equalClicked</a></div><div class="ttdeci">void equalClicked()</div></div>

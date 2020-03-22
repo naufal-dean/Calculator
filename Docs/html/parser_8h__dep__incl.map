@@ -1,10 +1,11 @@
-<map id="Calculator/parser.h" name="Calculator/parser.h">
-<area shape="rect" id="node1" title=" " alt="" coords="261,5,391,32"/>
-<area shape="rect" id="node2" href="$screen_widget_8h.html" title=" " alt="" coords="262,80,390,121"/>
-<area shape="rect" id="node3" href="$main_widget_8h.html" title=" " alt="" coords="186,169,314,211"/>
-<area shape="rect" id="node8" href="$screen_widget_8cpp.html" title=" " alt="" coords="338,169,469,211"/>
-<area shape="rect" id="node4" href="$mainwindow_8h.html" title=" " alt="" coords="82,266,247,293"/>
-<area shape="rect" id="node7" href="$main_widget_8cpp.html" title=" " alt="" coords="271,259,399,300"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="5,348,143,375"/>
-<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title=" " alt="" coords="167,348,346,375"/>
+<map id="Tubes OOP/Tubes&#45;1&#45;OOP/Calculator/parser.h" name="Tubes OOP/Tubes&#45;1&#45;OOP/Calculator/parser.h">
+<area shape="rect" id="node1" title=" " alt="" coords="459,5,632,47"/>
+<area shape="rect" id="node2" href="$screen_widget_8h.html" title=" " alt="" coords="320,95,547,136"/>
+<area shape="rect" id="node9" href="$parser_8cpp.html" title=" " alt="" coords="571,95,744,136"/>
+<area shape="rect" id="node3" href="$main_widget_8h.html" title=" " alt="" coords="199,184,415,225"/>
+<area shape="rect" id="node8" href="$screen_widget_8cpp.html" title=" " alt="" coords="439,184,681,225"/>
+<area shape="rect" id="node4" href="$mainwindow_8h.html" title=" " alt="" coords="107,273,280,315"/>
+<area shape="rect" id="node7" href="$main_widget_8cpp.html" title=" " alt="" coords="305,273,535,315"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title=" " alt="" coords="5,363,179,404"/>
+<area shape="rect" id="node6" href="$mainwindow_8cpp.html" title=" " alt="" coords="203,363,386,404"/>
 </map>
