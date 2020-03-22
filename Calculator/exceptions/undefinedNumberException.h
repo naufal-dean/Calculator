@@ -4,16 +4,9 @@
 #include "baseException.h"
 using namespace std;
 
-template <class T>
-class UndefinedNumberException : public BaseException<T> {
-private:
-    double number;
+class UndefinedNumberException : public BaseException {
 public:
-    UndefinedNumberException(double number) {
-        this->number = number;
-    }
-    void printMessage() {
-        cout << "Bilangan " << number << " menghasilkan bilangan tidak terdefinisi" << endl;
-    }
+    UndefinedNumberException();
+    void printMessage();
 };
 #endif // UNDEFINEDNUMBEREXCEPTION_H

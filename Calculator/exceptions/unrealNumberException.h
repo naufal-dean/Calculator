@@ -4,16 +4,12 @@
 #include "baseException.h"
 using namespace std;
 
-template <class T>
-class UnrealNumberException : public BaseException<T> {
+
+class UnrealNumberException : public BaseException {
 private:
     double number;
 public:
-    UnrealNumberException(double number) {
-        this->number = number;
-    }
-    void printMessage() {
-        cout << "Bilangan " << number << " menghasilkan bilangan tidak riil" << endl;
-    }
+    UnrealNumberException();
+    void printMessage();
 };
 #endif // UNREALEXCEPTION_H
