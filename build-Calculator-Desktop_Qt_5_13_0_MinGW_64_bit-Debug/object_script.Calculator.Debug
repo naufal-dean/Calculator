@@ -1,6 +1,7 @@
 debug/backspaceButton.o
 debug/binaryOpButton.o
 debug/calcButton.o
+debug/equalButton.o
 debug/numButton.o
 debug/divideExpression.o
 debug/sqrtExpression.o
@@ -12,6 +13,7 @@ debug/mainwindow.o
 debug/moc_backspaceButton.o
 debug/moc_binaryOpButton.o
 debug/moc_calcButton.o
+debug/moc_equalButton.o
 debug/moc_numButton.o
 debug/moc_buttonWidget.o
 debug/moc_mainWidget.o

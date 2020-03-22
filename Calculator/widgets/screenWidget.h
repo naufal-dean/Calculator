@@ -18,6 +18,7 @@ public:
 private slots:
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
+    void handleEqualClick();
     void handleNumClick(int value);
 };
 

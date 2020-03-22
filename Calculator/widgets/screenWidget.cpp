@@ -33,6 +33,11 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
     screen->setText(screen->text().append(type));
 }
 
+void ScreenWidget::handleEqualClick() {
+    screen->setText("test");
+    // TODO: call parser and show result
+}
+
 void ScreenWidget::handleNumClick(int value) {
     if (screen->text() == "0") {
         screen->setText(QString::number(value));
