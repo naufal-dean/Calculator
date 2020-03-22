@@ -100,21 +100,7 @@ public:
                 }
                 result = expr->solve();
             } else { // not found, only unary operator
-                if (input[0] == UN_OP_SQRT) {
-                    // Count sqrt
-                    qDebug() << "parser in";
-                    int sqrtCount = 0;
-                    while (input[sqrtCount] == UN_OP_SQRT)
-                        sqrtCount++;
-                    // Build expression
-                    qDebug() << "parser " << input.mid(sqrtCount).toDouble();
-                    Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
-                    for (int i = 0; i < sqrtCount; i++)
-                        expr = new SqrtExpression(expr);
-                    result = expr->solve();
-                } else {
-                    result = input.toLong();
-                }
+                result = input.toLong();
             }
         }
     }
@@ -171,12 +157,10 @@ public:
                 // Process
                 if (input[0] == UN_OP_SQRT) {
                     // Count sqrt
-                    qDebug() << "parser in";
                     int sqrtCount = 0;
                     while (input[sqrtCount] == UN_OP_SQRT)
                         sqrtCount++;
                     // Build expression
-                    qDebug() << "parser " << input.mid(sqrtCount).toDouble();
                     Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
                     for (int i = 0; i < sqrtCount; i++)
                         expr = new SqrtExpression(expr);

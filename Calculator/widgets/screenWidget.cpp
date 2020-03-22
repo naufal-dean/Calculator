@@ -134,6 +134,7 @@ void ScreenWidget::handleACClick() {
     {
         ScreenWidget::MC.pop();
     }
-    screen->setText("");
+    screen->setText("0");
+    this->isAns = true;
 }
 
