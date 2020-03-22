@@ -63,7 +63,7 @@ private:
     static int operatorFinder(QString input, int startIdx) {
         int idx = startIdx;
         while (idx < input.length() &&
-               (!isBinaryOp(input[idx]) || (input[idx] == UN_OP_MIN) && !input[idx - 1].isDigit())) {
+               (!isBinaryOp(input[idx]) || ((input[idx] == UN_OP_MIN) && !input[idx - 1].isDigit()))) {
             idx++;
         }
         return idx;
