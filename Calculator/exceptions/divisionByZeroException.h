@@ -1,5 +1,5 @@
-#ifndef DIVISIONBYZERO_H
-#define DIVISIONBYZERO_H
+#ifndef DIVISIONBYZEROEXCEPTION_H
+#define DIVISIONBYZEROEXCEPTION_H
 
 #include "baseException.h"
 
@@ -8,4 +8,4 @@ public:
     DivisionByZeroException();
 };
 
-#endif // DIVISIONBYZERO_H
+#endif // DIVISIONBYZEROEXCEPTION_H

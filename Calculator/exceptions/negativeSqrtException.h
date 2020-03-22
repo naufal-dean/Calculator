@@ -1,5 +1,5 @@
-#ifndef NEGATIVESQRT_H
-#define NEGATIVESQRT_H
+#ifndef NEGATIVESQRTEXCEPTION_H
+#define NEGATIVESQRTEXCEPTION_H
 
 #include "baseException.h"
 
@@ -8,4 +8,4 @@ public:
     NegativeSqrtException();
 };
 
-#endif // NEGATIVESQRT_H
+#endif // NEGATIVESQRTEXCEPTION_H
