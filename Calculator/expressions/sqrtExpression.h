@@ -3,6 +3,8 @@
 
 #include <cmath>
 #include "unaryExpression.h"
+#include "exceptions/undefinedNumberException.h"
+#include "exceptions/unrealNumberException.h"
 
 class SqrtExpression : public UnaryExpression<double> {
     public:

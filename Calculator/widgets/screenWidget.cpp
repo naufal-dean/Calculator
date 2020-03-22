@@ -1,7 +1,12 @@
 #include "screenWidget.h"
+#include <QtDebug>
 
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
+    // Create parser object
+//    parserLong = new Parser<long>();
+//    parserDouble = new Parser<double>();
+
     // Setting layout
     screen = new QLineEdit("0");
     screen->setReadOnly(true);
@@ -34,8 +39,15 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
 }
 
 void ScreenWidget::handleEqualClick() {
-    screen->setText("test");
     // TODO: call parser and show result
+//    qDebug() << "tests";
+    try {
+        long result = -1;
+        Parser::parser(screen->text(), result);
+        screen->setText(QString::number(result));
+    } catch (...) {
+        screen->setText("Syntax error");
+    }
 }
 
 void ScreenWidget::handleNumClick(int value) {

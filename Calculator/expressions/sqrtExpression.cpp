@@ -1,6 +1,5 @@
 #include "sqrtExpression.h"
-#include "exception/undefinedNumberException.h"
-#include "exception/unrealNumberException.h"
+
 SqrtExpression::SqrtExpression(Expression<double> *x) : UnaryExpression<double>(x) {}
 
 double SqrtExpression::solve() {

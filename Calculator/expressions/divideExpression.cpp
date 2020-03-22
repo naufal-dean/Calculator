@@ -1,5 +1,5 @@
 #include "divideExpression.h"
-#include "exception/undefinedNumberException.h"
+
 DivideExpression::DivideExpression(Expression<double> *x, Expression<double> *y) : BinaryExpression<double> (x, y) {}
 
 double DivideExpression::solve() {

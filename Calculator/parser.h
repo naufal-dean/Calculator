@@ -1,8 +1,10 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include <iostream>
+#include <vector>
+#include <cmath>
 #include <QString>
+
 #include "exceptions/baseException.h"
 #include "exceptions/undefinedNumberException.h"
 #include "exceptions/unrealNumberException.h"
@@ -19,6 +21,9 @@
 #include "expressions/absoluteExpression.h"
 
 #include "constants/constants.h"
+#include "exceptions/"
+
+#include <QtDebug>
 
 //#define BIN_OP_ADD "+"
 //#define BIN_OP_SUB "-"
@@ -26,49 +31,61 @@
 //#define BIN_OP_DIV QChar(0x00F7)
 //#define UN_OP_MIN "-"
 
-template <class T>
 class Parser
 {
-    public:
-        Expression<T> parsing (QString input)
-        {
-            if (input[0] != BIN_OP_ADD || input[0] != BIN_OP_SUB || input[0] != BIN_OP_MUL || input[0] != BIN_OP_DIV || input[0] != UN_OP_MIN )
-            {
-                QString inputNum1;
-                inputNum1.append(input[0]);
-                QString inputNum2 = "";
-
-                QChar token = input[1];
-                int i = 1;
-                while(token  != BIN_OP_ADD || token  != BIN_OP_SUB || token  != BIN_OP_MUL || token  != BIN_OP_DIV || token  != UN_OP_MIN  )
-                {
-                    inputNum1.append(token);
-                    i++;
-                    token = input[i];
-                }
-                QChar inputOperator;
-                inputOperator=input[i];
-                i++;
-                while(i  < input.size() )
-                {
-                    inputNum1.append(token);
-                    i++;
-                    token = input[i];
-                }
-
-                TerminalExpression<T>* Num1 = new TerminalExpression<T>((T) inputNum1.toDouble());
-                TerminalExpression<T>* Num2 = new TerminalExpression<T>((T) inputNum2.toDouble());
-
-                if (inputOperator == BIN_OP_ADD)
-                    return new AddExpression<T>(Num1,Num2);
-                else if (inputOperator == BIN_OP_SUB)
-                    return new SubstractExpression<T>(Num1,Num2);
-                else if (inputOperator == BIN_OP_MUL)
-                    return new MultiplyExpression<T>(Num1,Num2);
-                else if (inputOperator == BIN_OP_DIV)
-                    return new DivideExpression(Num1,Num2);
-
-            }
+private:
+    static int operatorFinder(QString input) {
+        int idx = 0;
+        while (idx < input.length() && input[idx].isDigit()) {
+            idx++;
         }
+        return idx;
+    }
+
+    static int operatorFinder(QString input, int startIdx) {
+        int idx = startIdx;
+        while (idx < input.length() && input[idx].isDigit()) {
+            idx++;
+        }
+        return idx;
+    }
+
+public:
+    static void parser(QString input, long &result) {
+        int idx = operatorFinder(input);
+        // Only number
+        if (idx == input.length()) {
+            result = input.toLong(); return;
+        }
+        // Not only number
+        int precIdx = 0;
+        Expression<long> *temp = new TerminalExpression<long>(input.mid(precIdx, idx - precIdx).toLong());
+        while (idx != input.length()) {
+            precIdx = idx + 1;
+            idx = operatorFinder(input, idx + 1);
+            long num = input.mid(precIdx, idx - precIdx).toLong();
+            // Build expression
+            if (input[precIdx - 1] == BIN_OP_ADD)
+                temp = new AddExpression<long>(temp, new TerminalExpression<long>(num));
+            else if (input[precIdx - 1] == BIN_OP_SUB)
+                temp = new SubstractExpression<long>(temp, new TerminalExpression<long>(num));
+            else if (input[precIdx - 1] == BIN_OP_MUL)
+                temp = new MultiplyExpression<long>(temp, new TerminalExpression<long>(num));
+        }
+
+        result = temp->solve();
+    }
+
+    static void parser(QString input, double &result, int roundedTo) {
+        int idx = operatorFinder(input);
+        // Only number
+        if (idx == input.length()) {
+            result = (int) (input.toDouble() * pow(10, roundedTo) + .5);
+            result = (double) result / pow(10, roundedTo);
+            return;
+        }
+        // Not only number
+    }
 };
+
 #endif // PARSER_H

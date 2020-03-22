@@ -9,7 +9,7 @@ class AbsoluteExpression : public UnaryExpression<T> {
     public:
         AbsoluteExpression(Expression<T> *x) : UnaryExpression<T> (x) {}
         T solve() override {
-            return abs(x->solve());
+            return abs(this->x->solve());
         }
 };
 

@@ -6,6 +6,7 @@
 #include <QLineEdit>
 #include <QFont>
 #include "../constants/constants.h"
+#include "../parser.h"
 
 class ScreenWidget : public QWidget
 {
@@ -13,6 +14,8 @@ class ScreenWidget : public QWidget
 private:
     QGridLayout *mainLayout;
     QLineEdit *screen;
+//    Parser<long> *parserLong;
+//    Parser<double> *parserDouble;
 public:
     ScreenWidget(QWidget *parent = nullptr);
 private slots:
