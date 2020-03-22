@@ -3,6 +3,8 @@ debug/binaryOpButton.o
 debug/calcButton.o
 debug/equalButton.o
 debug/numButton.o
+debug/opButton.o
+debug/unaryOpButton.o
 debug/divideExpression.o
 debug/sqrtExpression.o
 debug/buttonWidget.o
@@ -15,6 +17,8 @@ debug/moc_binaryOpButton.o
 debug/moc_calcButton.o
 debug/moc_equalButton.o
 debug/moc_numButton.o
+debug/moc_opButton.o
+debug/moc_unaryOpButton.o
 debug/moc_buttonWidget.o
 debug/moc_mainWidget.o
 debug/moc_screenWidget.o

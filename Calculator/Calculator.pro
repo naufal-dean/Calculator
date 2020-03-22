@@ -21,6 +21,8 @@ SOURCES += \
     buttons/calcButton.cpp \
     buttons/equalButton.cpp \
     buttons/numButton.cpp \
+    buttons/opButton.cpp \
+    buttons/unaryOpButton.cpp \
     expressions/divideExpression.cpp \
     expressions/sqrtExpression.cpp \
     widgets/buttonWidget.cpp \
@@ -35,6 +37,8 @@ HEADERS += \
     buttons/calcButton.h \
     buttons/equalButton.h \
     buttons/numButton.h \
+    buttons/opButton.h \
+    buttons/unaryOpButton.h \
     constants/constants.h \
     exception/baseException.h \
     exception/undefinedNumberException.h \

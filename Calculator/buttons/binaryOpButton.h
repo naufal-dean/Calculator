@@ -1,16 +1,13 @@
 #ifndef BINARYOPBUTTON_H
 #define BINARYOPBUTTON_H
 
-#include "calcButton.h"
+#include "opButton.h"
 
-class BinaryOpButton : public CalcButton
+class BinaryOpButton : public OpButton
 {
     Q_OBJECT
-private:
-    QString type;
 public:
     BinaryOpButton(QString type);
-    QString getType();
 signals:
     void binaryOpClicked(QString type);
 private slots:

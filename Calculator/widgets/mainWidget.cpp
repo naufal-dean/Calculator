@@ -7,6 +7,7 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent), screenWidget(new Scre
     connect(buttonWidget, SIGNAL(binaryOpClicked(QString)), screenWidget, SLOT(handleBinaryOpClick(QString)));
     connect(buttonWidget, SIGNAL(equalClicked()), screenWidget, SLOT(handleEqualClick()));
     connect(buttonWidget, SIGNAL(numClicked(int)), screenWidget, SLOT(handleNumClick(int)));
+    connect(buttonWidget, SIGNAL(unaryOpClicked(QString)), screenWidget, SLOT(handleUnaryOpClick(QString)));
 
     // Setting layout
     mainLayout = new QGridLayout;

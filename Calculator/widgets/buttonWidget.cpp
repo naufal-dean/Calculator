@@ -46,17 +46,23 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     connect(btn9, SIGNAL(numClicked(int)), this, SLOT(handleNumClick(int)));
     connect(btn0, SIGNAL(numClicked(int)), this, SLOT(handleNumClick(int)));
 
+    // Create unary op button
+    btnSqrt = new UnaryOpButton(UN_OP_SQRT);
+
+    // Connect unary op button
+    connect(btnSqrt, SIGNAL(unaryOpClicked(QString)), this, SLOT(handleUnaryOpClick(QString)));
+
     // Setting layout
     mainLayout = new QGridLayout;
 
-    mainLayout->addWidget(btnBs, 0, 4);
+    mainLayout->addWidget(btnBs, 0, 3);
 
-    mainLayout->addWidget(btnDiv, 1, 4);
-    mainLayout->addWidget(btnMul, 2, 4);
-    mainLayout->addWidget(btnSub, 3, 4);
-    mainLayout->addWidget(btnAdd, 4, 4);
+    mainLayout->addWidget(btnDiv, 1, 3);
+    mainLayout->addWidget(btnMul, 2, 3);
+    mainLayout->addWidget(btnSub, 3, 3);
+    mainLayout->addWidget(btnAdd, 4, 3);
 
-    mainLayout->addWidget(btnEq, 5, 4);
+    mainLayout->addWidget(btnEq, 5, 3);
 
     mainLayout->addWidget(btn1, 2, 0);
     mainLayout->addWidget(btn2, 2, 1);
@@ -68,6 +74,8 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btn8, 4, 1);
     mainLayout->addWidget(btn9, 4, 2);
     mainLayout->addWidget(btn0, 5, 1);
+
+    mainLayout->addWidget(btnSqrt, 1, 2);
 
     setLayout(mainLayout);
 }
@@ -86,4 +94,8 @@ void ButtonWidget::handleEqualClick() {
 
 void ButtonWidget::handleNumClick(int value) {
     emit numClicked(value);
+}
+
+void ButtonWidget::handleUnaryOpClick(QString type) {
+    emit unaryOpClicked(type);
 }

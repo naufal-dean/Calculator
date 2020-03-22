@@ -95,7 +95,7 @@ void BinaryOpButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
 }
 
 QT_INIT_METAOBJECT const QMetaObject BinaryOpButton::staticMetaObject = { {
-    &CalcButton::staticMetaObject,
+    &OpButton::staticMetaObject,
     qt_meta_stringdata_BinaryOpButton.data,
     qt_meta_data_BinaryOpButton,
     qt_static_metacall,
@@ -114,12 +114,12 @@ void *BinaryOpButton::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_BinaryOpButton.stringdata0))
         return static_cast<void*>(this);
-    return CalcButton::qt_metacast(_clname);
+    return OpButton::qt_metacast(_clname);
 }
 
 int BinaryOpButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = CalcButton::qt_metacall(_c, _id, _a);
+    _id = OpButton::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

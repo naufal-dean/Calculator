@@ -20,6 +20,7 @@ private slots:
     void handleBinaryOpClick(QString type);
     void handleEqualClick();
     void handleNumClick(int value);
+    void handleUnaryOpClick(QString type);
 };
 
 #endif // SCREENWIDGET_H

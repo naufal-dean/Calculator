@@ -45,3 +45,11 @@ void ScreenWidget::handleNumClick(int value) {
         screen->setText(screen->text().append(QString::number(value)));
     }
 }
+
+void ScreenWidget::handleUnaryOpClick(QString type) {
+    if (screen->text() == "0") {
+        screen->setText(type);
+    } else {
+        screen->setText(screen->text().append(type));
+    }
+}

@@ -3,6 +3,8 @@ release/binaryOpButton.o
 release/calcButton.o
 release/equalButton.o
 release/numButton.o
+release/opButton.o
+release/unaryOpButton.o
 release/divideExpression.o
 release/sqrtExpression.o
 release/buttonWidget.o
@@ -15,6 +17,8 @@ release/moc_binaryOpButton.o
 release/moc_calcButton.o
 release/moc_equalButton.o
 release/moc_numButton.o
+release/moc_opButton.o
+release/moc_unaryOpButton.o
 release/moc_buttonWidget.o
 release/moc_mainWidget.o
 release/moc_screenWidget.o
