@@ -9,7 +9,12 @@ class LogarithmExpression : public UnaryExpression<T> {
     public:
         LogarithmExpression(Expression<T> *x) : UnaryExpression<T> (x) {}
         T solve() override {
-            return log10(x->solve());
+            if(x->solve <= 0) {
+                throw UndefinedNumberException<double>(x->solve());
+            }
+            else {
+                return log10(x->solve());   
+            }
         }
 };
 
