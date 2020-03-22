@@ -17,6 +17,7 @@ release/negativeSqrtException.o
 release/syntaxErrorException.o
 release/divideExpression.o
 release/sqrtExpression.o
+release/parser.o
 release/buttonWidget.o
 release/mainWidget.o
 release/screenWidget.o

@@ -35,6 +35,7 @@ SOURCES += \
     exceptions/syntaxErrorException.cpp \
     expressions/divideExpression.cpp \
     expressions/sqrtExpression.cpp \
+    parser.cpp \
     widgets/buttonWidget.cpp \
     widgets/mainWidget.cpp \
     widgets/screenWidget.cpp \

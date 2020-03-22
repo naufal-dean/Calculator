@@ -17,6 +17,7 @@ debug/negativeSqrtException.o
 debug/syntaxErrorException.o
 debug/divideExpression.o
 debug/sqrtExpression.o
+debug/parser.o
 debug/buttonWidget.o
 debug/mainWidget.o
 debug/screenWidget.o
