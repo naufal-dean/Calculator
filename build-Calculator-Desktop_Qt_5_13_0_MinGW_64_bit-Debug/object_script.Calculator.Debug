@@ -6,6 +6,7 @@ debug/numButton.o
 debug/opButton.o
 debug/unaryOpButton.o
 debug/baseException.o
+debug/syntaxErrorException.o
 debug/undefinedNumberException.o
 debug/unrealNumberException.o
 debug/divideExpression.o

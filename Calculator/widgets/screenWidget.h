@@ -14,8 +14,8 @@ class ScreenWidget : public QWidget
 private:
     QGridLayout *mainLayout;
     QLineEdit *screen;
-//    Parser<long> *parserLong;
-//    Parser<double> *parserDouble;
+    bool isAns;
+    double lastAns;
 public:
     ScreenWidget(QWidget *parent = nullptr);
 private slots:

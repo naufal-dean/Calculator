@@ -8,6 +8,7 @@
 #include "exceptions/baseException.h"
 #include "exceptions/undefinedNumberException.h"
 #include "exceptions/unrealNumberException.h"
+#include "exceptions/syntaxErrorException.h"
 #include "expressions/expression.h"
 #include "expressions/terminalExpression.h"
 #include "expressions/binaryExpression.h"
@@ -51,14 +52,36 @@ private:
 
 public:
     static void parser(QString input, long &result) {
-        int idx = operatorFinder(input);
+        // Zeroth check
+        if (!(input[input.length() - 1].isDigit()))
+            throw new SyntaxErrorException();
+
+        int idx = 0; bool isMinusFirst = false;
+        // Check minus in front
+        if (input[0] == UN_OP_MIN) {
+            isMinusFirst = true;
+            idx = operatorFinder(input, 1);
+        } else {
+            idx = operatorFinder(input);
+        }
         // Only number
         if (idx == input.length()) {
-            result = input.toLong(); return;
+            result = input.toLong();
+            if (isMinusFirst)
+                result *= -1;
+            return;
         }
+
         // Not only number
         int precIdx = 0;
-        Expression<long> *temp = new TerminalExpression<long>(input.mid(precIdx, idx - precIdx).toLong());
+
+        // Build first expression
+        Expression<long> *temp;
+        temp = new TerminalExpression<long>(input.mid(precIdx, idx - precIdx).toLong());
+        if (isMinusFirst)
+            temp = new NegativeExpression<long>(temp);
+
+        // Build next expression
         while (idx != input.length()) {
             precIdx = idx + 1;
             idx = operatorFinder(input, idx + 1);

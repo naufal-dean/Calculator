@@ -24,6 +24,7 @@ SOURCES += \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
     exceptions/baseException.cpp \
+    exceptions/syntaxErrorException.cpp \
     exceptions/undefinedNumberException.cpp \
     exceptions/unrealNumberException.cpp \
     expressions/divideExpression.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     buttons/unaryOpButton.h \
     constants/constants.h \
     exceptions/baseException.h \
+    exceptions/syntaxErrorException.h \
     exceptions/undefinedNumberException.h \
     exceptions/unrealNumberException.h \
     expressions/addExpression.h \

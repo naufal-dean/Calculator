@@ -9,4 +9,6 @@
 #define UN_OP_MIN "-"
 #define UN_OP_SQRT QChar(0x221A)
 
+#define COMMA "."
+
 #endif // CONSTANTS_H

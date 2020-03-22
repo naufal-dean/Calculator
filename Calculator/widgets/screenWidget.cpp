@@ -3,9 +3,8 @@
 
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
-    // Create parser object
-//    parserLong = new Parser<long>();
-//    parserDouble = new Parser<double>();
+    this->isAns = true;
+    this->lastAns = 0;
 
     // Setting layout
     screen = new QLineEdit("0");
@@ -24,6 +23,7 @@ void ScreenWidget::handleBackspaceClick() {
     int textLen = screen->text().length();
     if (textLen == 1) {
         screen->setText("0");
+        isAns = true;
     } else {
         screen->setText(screen->text().mid(0, textLen - 1));
     }
@@ -39,28 +39,47 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
 }
 
 void ScreenWidget::handleEqualClick() {
-    // TODO: call parser and show result
 //    qDebug() << "tests";
+    bool needDouble = false; int idx = 0;
+    this->isAns = true;
     try {
-        long result = -1;
-        Parser::parser(screen->text(), result);
-        screen->setText(QString::number(result));
+        while (idx < screen->text().length() && !needDouble) {
+            if (screen->text()[idx] == BIN_OP_DIV || screen->text()[idx] == UN_OP_SQRT || screen->text()[idx] == COMMA)
+                needDouble = true;
+            idx++;
+        }
+
+        if (needDouble) {
+            double result = -1;
+            Parser::parser(screen->text(), result, 3);
+            screen->setText(QString::number(result));
+            this->lastAns = result;
+        } else { // long
+            long result = -1;
+            Parser::parser(screen->text(), result);
+            screen->setText(QString::number(result));
+            this->lastAns = (double) result;
+        }
+    } catch (BaseException * err) {
+        screen->setText(err->getMessage());
     } catch (...) {
-        screen->setText("Syntax error");
+        screen->setText("Some error encountered");
     }
 }
 
 void ScreenWidget::handleNumClick(int value) {
-    if (screen->text() == "0") {
+    if (isAns) {
         screen->setText(QString::number(value));
+        isAns = false;
     } else {
         screen->setText(screen->text().append(QString::number(value)));
     }
 }
 
 void ScreenWidget::handleUnaryOpClick(QString type) {
-    if (screen->text() == "0") {
+    if (isAns) {
         screen->setText(type);
+        isAns = false;
     } else {
         screen->setText(screen->text().append(type));
     }
