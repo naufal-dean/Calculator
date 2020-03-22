@@ -17,7 +17,6 @@
 #include "expressions/substractExpression.h"
 #include "expressions/sqrtExpression.h"
 #include "expressions/negativeExpression.h"
-#include "expressions/absoluteExpression.h"
 
 #include "constants/constants.h"
 
@@ -26,12 +25,18 @@
 class Parser
 {
 private:
+    // Metode untuk mencari operator binary high priority pertama
     static int binOperatorHighFinder(const QString &input);
+    // Metode untuk mengecek apakah char termasuk operator binary low priority
     static bool isLowBinaryOp(QChar input);
+    // Metode untuk mencari operator binary low priority pertama
     static int binOperatorLowFinder(const QString &input);
+    // Metode untuk rounding double
     static double roundDouble(double value, int roundedTo);
 public:
+    // Metode untuk melakukan parsing input long
     static void parser(QString input, long &result);
+    // Metode untuk melakukan parsing input double
     static void parser(QString input, double &result, int roundedTo);
 };
 

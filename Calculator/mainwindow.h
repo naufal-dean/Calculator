@@ -10,10 +10,13 @@
 
 class MainWindow : public QMainWindow
 {
+// Kelas main window GUI
     Q_OBJECT
 
 public:
+    // Konstruktor kelas
     MainWindow(QWidget *parent = nullptr);
+    // Destruktor kelas
     ~MainWindow();
 
 private:

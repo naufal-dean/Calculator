@@ -17,6 +17,7 @@
 
 class ButtonWidget : public QWidget
 {
+// Class widget yang berisi susunan tombol pada kalkulator
     Q_OBJECT
 private:
     QGridLayout *mainLayout;
@@ -32,8 +33,10 @@ private:
     AnsButton *btnAns;
 
 public:
+    // Konstruktor kelas
     ButtonWidget(QWidget *parent = nullptr);
 signals:
+    // Sinyal untuk berbagai tombol, untuk menyalurkan sinyal dari tiap individu tombol
     void backspaceClicked();
     void binaryOpClicked(QString type);
     void commaClicked();
@@ -45,6 +48,7 @@ signals:
     void acClicked();
     void ansClicked();
 private slots:
+    // Metode untuk menyalurkan sinyal dari tiap individu tombol ke luar ButtonWidget
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
     void handleCommaClick();
