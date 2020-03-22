@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ButtonWidget_t {
-    QByteArrayData data[16];
-    char stringdata0[219];
+    QByteArrayData data[22];
+    char stringdata0[291];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -42,21 +42,29 @@ QT_MOC_LITERAL(6, 65, 12), // "equalClicked"
 QT_MOC_LITERAL(7, 78, 10), // "numClicked"
 QT_MOC_LITERAL(8, 89, 5), // "value"
 QT_MOC_LITERAL(9, 95, 14), // "unaryOpClicked"
-QT_MOC_LITERAL(10, 110, 20), // "handleBackspaceClick"
-QT_MOC_LITERAL(11, 131, 19), // "handleBinaryOpClick"
-QT_MOC_LITERAL(12, 151, 16), // "handleCommaClick"
-QT_MOC_LITERAL(13, 168, 16), // "handleEqualClick"
-QT_MOC_LITERAL(14, 185, 14), // "handleNumClick"
-QT_MOC_LITERAL(15, 200, 18) // "handleUnaryOpClick"
+QT_MOC_LITERAL(10, 110, 9), // "mcClicked"
+QT_MOC_LITERAL(11, 120, 9), // "mrClicked"
+QT_MOC_LITERAL(12, 130, 9), // "acClicked"
+QT_MOC_LITERAL(13, 140, 20), // "handleBackspaceClick"
+QT_MOC_LITERAL(14, 161, 19), // "handleBinaryOpClick"
+QT_MOC_LITERAL(15, 181, 16), // "handleCommaClick"
+QT_MOC_LITERAL(16, 198, 16), // "handleEqualClick"
+QT_MOC_LITERAL(17, 215, 14), // "handleNumClick"
+QT_MOC_LITERAL(18, 230, 18), // "handleUnaryOpClick"
+QT_MOC_LITERAL(19, 249, 13), // "handleMCClick"
+QT_MOC_LITERAL(20, 263, 13), // "handleMRClick"
+QT_MOC_LITERAL(21, 277, 13) // "handleACClick"
 
     },
     "ButtonWidget\0backspaceClicked\0\0"
     "binaryOpClicked\0type\0commaClicked\0"
     "equalClicked\0numClicked\0value\0"
-    "unaryOpClicked\0handleBackspaceClick\0"
+    "unaryOpClicked\0mcClicked\0mrClicked\0"
+    "acClicked\0handleBackspaceClick\0"
     "handleBinaryOpClick\0handleCommaClick\0"
     "handleEqualClick\0handleNumClick\0"
-    "handleUnaryOpClick"
+    "handleUnaryOpClick\0handleMCClick\0"
+    "handleMRClick\0handleACClick"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,28 +74,34 @@ static const uint qt_meta_data_ButtonWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       6,       // signalCount
+       9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x06 /* Public */,
-       3,    1,   75,    2, 0x06 /* Public */,
-       5,    0,   78,    2, 0x06 /* Public */,
-       6,    0,   79,    2, 0x06 /* Public */,
-       7,    1,   80,    2, 0x06 /* Public */,
-       9,    1,   83,    2, 0x06 /* Public */,
+       1,    0,  104,    2, 0x06 /* Public */,
+       3,    1,  105,    2, 0x06 /* Public */,
+       5,    0,  108,    2, 0x06 /* Public */,
+       6,    0,  109,    2, 0x06 /* Public */,
+       7,    1,  110,    2, 0x06 /* Public */,
+       9,    1,  113,    2, 0x06 /* Public */,
+      10,    0,  116,    2, 0x06 /* Public */,
+      11,    0,  117,    2, 0x06 /* Public */,
+      12,    0,  118,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      10,    0,   86,    2, 0x08 /* Private */,
-      11,    1,   87,    2, 0x08 /* Private */,
-      12,    0,   90,    2, 0x08 /* Private */,
-      13,    0,   91,    2, 0x08 /* Private */,
-      14,    1,   92,    2, 0x08 /* Private */,
-      15,    1,   95,    2, 0x08 /* Private */,
+      13,    0,  119,    2, 0x08 /* Private */,
+      14,    1,  120,    2, 0x08 /* Private */,
+      15,    0,  123,    2, 0x08 /* Private */,
+      16,    0,  124,    2, 0x08 /* Private */,
+      17,    1,  125,    2, 0x08 /* Private */,
+      18,    1,  128,    2, 0x08 /* Private */,
+      19,    0,  131,    2, 0x08 /* Private */,
+      20,    0,  132,    2, 0x08 /* Private */,
+      21,    0,  133,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -96,6 +110,9 @@ static const uint qt_meta_data_ButtonWidget[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -104,6 +121,9 @@ static const uint qt_meta_data_ButtonWidget[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -120,12 +140,18 @@ void ButtonWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->equalClicked(); break;
         case 4: _t->numClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->unaryOpClicked((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 6: _t->handleBackspaceClick(); break;
-        case 7: _t->handleBinaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->handleCommaClick(); break;
-        case 9: _t->handleEqualClick(); break;
-        case 10: _t->handleNumClick((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 11: _t->handleUnaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 6: _t->mcClicked(); break;
+        case 7: _t->mrClicked(); break;
+        case 8: _t->acClicked(); break;
+        case 9: _t->handleBackspaceClick(); break;
+        case 10: _t->handleBinaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->handleCommaClick(); break;
+        case 12: _t->handleEqualClick(); break;
+        case 13: _t->handleNumClick((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->handleUnaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 15: _t->handleMCClick(); break;
+        case 16: _t->handleMRClick(); break;
+        case 17: _t->handleACClick(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -172,6 +198,27 @@ void ButtonWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
                 return;
             }
         }
+        {
+            using _t = void (ButtonWidget::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ButtonWidget::mcClicked)) {
+                *result = 6;
+                return;
+            }
+        }
+        {
+            using _t = void (ButtonWidget::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ButtonWidget::mrClicked)) {
+                *result = 7;
+                return;
+            }
+        }
+        {
+            using _t = void (ButtonWidget::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&ButtonWidget::acClicked)) {
+                *result = 8;
+                return;
+            }
+        }
     }
 }
 
@@ -204,13 +251,13 @@ int ButtonWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 18;
     }
     return _id;
 }
@@ -252,6 +299,24 @@ void ButtonWidget::unaryOpClicked(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void ButtonWidget::mcClicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
+}
+
+// SIGNAL 7
+void ButtonWidget::mrClicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
+}
+
+// SIGNAL 8
+void ButtonWidget::acClicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

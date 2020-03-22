@@ -1,8 +1,11 @@
+debug/acButton.o
 debug/backspaceButton.o
 debug/binaryOpButton.o
 debug/calcButton.o
 debug/commaButton.o
 debug/equalButton.o
+debug/mcButton.o
+debug/mrButton.o
 debug/numButton.o
 debug/opButton.o
 debug/unaryOpButton.o
@@ -18,11 +21,14 @@ debug/mainWidget.o
 debug/screenWidget.o
 debug/main.o
 debug/mainwindow.o
+debug/moc_acButton.o
 debug/moc_backspaceButton.o
 debug/moc_binaryOpButton.o
 debug/moc_calcButton.o
 debug/moc_commaButton.o
 debug/moc_equalButton.o
+debug/moc_mcButton.o
+debug/moc_mrButton.o
 debug/moc_numButton.o
 debug/moc_opButton.o
 debug/moc_unaryOpButton.o

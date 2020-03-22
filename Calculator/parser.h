@@ -34,6 +34,146 @@
 
 class Parser
 {
+public:
+    static int binOperatorHighFinder(const QString &input) {
+        int idx = 0;
+        while (idx < input.length()) {
+            if (input[idx] == BIN_OP_MUL || input[idx] == BIN_OP_DIV) break;
+            idx++;
+        }
+        return idx;
+    }
+
+    static bool isLowBinaryOp(QChar input) {
+        return (input == BIN_OP_ADD) || (input == BIN_OP_SUB);
+    }
+
+    static int binOperatorLowFinder(const QString &input) {
+        int idx = 0;
+        while (idx < input.length() &&
+               (!isLowBinaryOp(input[idx]) || input[idx] == UN_OP_MIN)) {
+            if (input[idx] == UN_OP_MIN) {
+                if (idx == 0) {
+                    idx++;
+                } else { // idx > 0
+                    if (!input[idx - 1].isDigit()) {
+                        idx++;
+                    } else {
+                        return idx;
+                    }
+                }
+            } else {
+                idx++;
+            }
+        }
+        return idx;
+    }
+
+
+    static void parser(QString input, long &result) {
+        // Zeroth check
+        if (!(input[input.length() - 1].isDigit()))
+            throw new SyntaxErrorException();
+
+        // process
+        int idx = binOperatorLowFinder(input);
+        long leftResult, rightResult;
+        Expression<double> *expr;
+        if (idx != input.length()) { // found
+            parser(input.left(idx), leftResult);
+            parser(input.mid(idx + 1), rightResult);
+            if (input[idx] == BIN_OP_ADD) {
+                expr = new AddExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+            } else { // input[idx] == BIN_OP_SUB
+                expr = new SubstractExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+            }
+            result = expr->solve();
+        } else { // not found
+            idx = binOperatorHighFinder(input);
+            if (idx != input.length()) { // found
+                parser(input.left(idx), leftResult);
+                parser(input.mid(idx + 1), rightResult);
+                if (input[idx] == BIN_OP_MUL) {
+                    expr = new MultiplyExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+                } else { // input[idx] == BIN_OP_DIV
+                    expr = new DivideExpression(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+                }
+                result = expr->solve();
+            } else { // not found, only unary operator
+                if (input[0] == UN_OP_SQRT) {
+                    // Count sqrt
+                    qDebug() << "parser in";
+                    int sqrtCount = 0;
+                    while (input[sqrtCount] == UN_OP_SQRT)
+                        sqrtCount++;
+                    // Build expression
+                    qDebug() << "parser " << input.mid(sqrtCount).toDouble();
+                    Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
+                    for (int i = 0; i < sqrtCount; i++)
+                        expr = new SqrtExpression(expr);
+                    result = expr->solve();
+                } else {
+                    result = input.toLong();
+                }
+            }
+        }
+    }
+
+    static void parser(QString input, double &result, int roundedTo) {
+        // Zeroth check
+        if (!(input[input.length() - 1].isDigit()))
+            throw new SyntaxErrorException();
+
+        // process
+        int idx = binOperatorLowFinder(input);
+        double leftResult, rightResult;
+        Expression<double> *expr;
+        if (idx != input.length()) { // found
+            parser(input.left(idx), leftResult, roundedTo);
+            parser(input.mid(idx + 1), rightResult, roundedTo);
+            if (input[idx] == BIN_OP_ADD) {
+                expr = new AddExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+            } else { // input[idx] == BIN_OP_SUB
+                expr = new SubstractExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+            }
+            result = (int) (expr->solve() * pow(10, roundedTo) + .5);
+            result = (double) result / pow(10, roundedTo);
+        } else { // not found
+            idx = binOperatorHighFinder(input);
+            if (idx != input.length()) { // found
+                parser(input.left(idx), leftResult, roundedTo);
+                parser(input.mid(idx + 1), rightResult, roundedTo);
+                if (input[idx] == BIN_OP_MUL) {
+                    expr = new MultiplyExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+                } else { // input[idx] == BIN_OP_DIV
+                    expr = new DivideExpression(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
+                }
+                result = (int) (expr->solve() * pow(10, roundedTo) + .5);
+                result = (double) result / pow(10, roundedTo);
+            } else { // not found, only unary operator
+                if (input[0] == UN_OP_SQRT) {
+                    // Count sqrt
+                    qDebug() << "parser in";
+                    int sqrtCount = 0;
+                    while (input[sqrtCount] == UN_OP_SQRT)
+                        sqrtCount++;
+                    // Build expression
+                    qDebug() << "parser " << input.mid(sqrtCount).toDouble();
+                    Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
+                    for (int i = 0; i < sqrtCount; i++)
+                        expr = new SqrtExpression(expr);
+                    result = (int) (expr->solve() * pow(10, roundedTo) + .5);
+                    result = (double) result / pow(10, roundedTo);
+                } else {
+                    result = (int) (input.toDouble() * pow(10, roundedTo) + .5);
+                    result = (double) result / pow(10, roundedTo);
+                }
+            }
+        }
+    }
+};
+
+/* buat jaga2, parser lama
 private:
     static bool isBinaryOp(QChar input) {
         return (input == BIN_OP_ADD) || (input == BIN_OP_DIV) || (input == BIN_OP_MUL) || (input == BIN_OP_SUB);
@@ -194,6 +334,6 @@ public:
         result = (int) (temp->solve() * pow(10, roundedTo) + .5);
         result = (double) result / pow(10, roundedTo);
     }
-};
+*/
 
 #endif // PARSER_H
