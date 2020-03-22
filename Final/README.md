@@ -2,7 +2,7 @@
 
 ## CALCULATOR
 
-Kelompok 4 / K03 :
+Kelompok 12 / K03 :
 1. Vincentius Lienardo / 13518081
 2. Muhammad Mirza Fathan Al Arsyad / 13518111
 3. Naufal Dean Anugrah / 13518123
@@ -20,6 +20,9 @@ Kelompok 4 / K03 :
 ## How to run in windows?
 1. Change the current directory to bin.
 2. Run the Calculator.exe.
+
+## App screenshot
+![alt text](App_Screenshot.png "Calculator App Screenshot")
 
 ## File Structure
 ```
