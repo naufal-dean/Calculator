@@ -109,11 +109,13 @@ void ScreenWidget::handleMCClick() {
             double result = -1;
             Parser::parser(screen->text(), result, 3);
             ScreenWidget::MC.push(QString::number(result));
+            screen->setText(QString::number(result));
             this->lastAns = result;
         } else { // long
             long result = -1;
             Parser::parser(screen->text(), result);
             ScreenWidget::MC.push(QString::number(result));
+            screen->setText(QString::number(result));
             this->lastAns = (double) result;
         }
     } catch (BaseException * err) {
@@ -124,13 +126,15 @@ void ScreenWidget::handleMCClick() {
 }
 
 void ScreenWidget::handleMRClick() {
-
-    screen->setText(screen->text().append(ScreenWidget::MC.front()));
-    ScreenWidget::MC.pop();
+    if (!ScreenWidget::MC.empty())
+    {
+        screen->setText(screen->text().append(ScreenWidget::MC.front()));
+        ScreenWidget::MC.pop();
+    }
 }
 
 void ScreenWidget::handleACClick() {
-    while(ScreenWidget::MC.empty() != true)
+    while(!ScreenWidget::MC.empty())
     {
         ScreenWidget::MC.pop();
     }
