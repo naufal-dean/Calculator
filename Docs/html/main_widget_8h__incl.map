@@ -1,0 +1,44 @@
+<map id="Calculator/widgets/mainWidget.h" name="Calculator/widgets/mainWidget.h">
+<area shape="rect" id="node1" title=" " alt="" coords="2209,5,2337,47"/>
+<area shape="rect" id="node2" title=" " alt="" coords="2189,169,2263,196"/>
+<area shape="rect" id="node3" title=" " alt="" coords="2287,169,2381,196"/>
+<area shape="rect" id="node4" href="$screen_widget_8h.html" title=" " alt="" coords="2067,95,2180,121"/>
+<area shape="rect" id="node30" href="$button_widget_8h.html" title=" " alt="" coords="2816,95,2927,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1091,169,1169,196"/>
+<area shape="rect" id="node6" title=" " alt="" coords="2055,169,2114,196"/>
+<area shape="rect" id="node7" href="$constants_8h.html" title=" " alt="" coords="2585,244,2747,271"/>
+<area shape="rect" id="node8" href="$parser_8h.html" title=" " alt="" coords="1193,169,1275,196"/>
+<area shape="rect" id="node29" title=" " alt="" coords="1009,169,1067,196"/>
+<area shape="rect" id="node9" title=" " alt="" coords="503,244,559,271"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1045,326,1103,353"/>
+<area shape="rect" id="node11" title=" " alt="" coords="71,483,138,509"/>
+<area shape="rect" id="node12" href="$base_exception_8h.html" title=" " alt="" coords="167,408,354,435"/>
+<area shape="rect" id="node13" href="$undefined_number_exception_8h.html" title=" " alt="" coords="739,319,929,360"/>
+<area shape="rect" id="node14" href="$unreal_number_exception_8h.html" title=" " alt="" coords="476,326,715,353"/>
+<area shape="rect" id="node15" href="$syntax_error_exception_8h.html" title=" " alt="" coords="39,326,264,353"/>
+<area shape="rect" id="node16" href="$invalid_double_exception_8h.html" title=" " alt="" coords="288,319,452,360"/>
+<area shape="rect" id="node17" href="$expression_8h.html" title=" " alt="" coords="1582,408,1753,435"/>
+<area shape="rect" id="node18" href="$terminal_expression_8h.html" title=" " alt="" coords="1677,326,1895,353"/>
+<area shape="rect" id="node19" href="$binary_expression_8h.html" title=" " alt="" coords="1984,326,2191,353"/>
+<area shape="rect" id="node20" href="$unary_expression_8h.html" title=" " alt="" coords="1448,326,1652,353"/>
+<area shape="rect" id="node21" href="$add_expression_8h.html" title=" " alt="" coords="1824,244,2017,271"/>
+<area shape="rect" id="node22" href="$divide_expression_8h.html" title=" " alt="" coords="1251,244,1455,271"/>
+<area shape="rect" id="node23" href="$multiply_expression_8h.html" title=" " alt="" coords="2041,244,2259,271"/>
+<area shape="rect" id="node24" href="$substract_expression_8h.html" title=" " alt="" coords="2283,244,2510,271"/>
+<area shape="rect" id="node25" href="$sqrt_expression_8h.html" title=" " alt="" coords="685,244,879,271"/>
+<area shape="rect" id="node26" href="$negative_expression_8h.html" title=" " alt="" coords="1479,244,1698,271"/>
+<area shape="rect" id="node27" href="$absolute_expression_8h.html" title=" " alt="" coords="1005,244,1226,271"/>
+<area shape="rect" id="node28" title=" " alt="" coords="405,244,479,271"/>
+<area shape="rect" id="node31" href="$backspace_button_8h.html" title=" " alt="" coords="2924,244,3117,271"/>
+<area shape="rect" id="node34" href="$binary_op_button_8h.html" title=" " alt="" coords="3020,169,3203,196"/>
+<area shape="rect" id="node36" href="$comma_button_8h.html" title=" " alt="" coords="3309,244,3482,271"/>
+<area shape="rect" id="node37" href="$equal_button_8h.html" title=" " alt="" coords="3481,169,3643,196"/>
+<area shape="rect" id="node38" href="$num_button_8h.html" title=" " alt="" coords="3667,169,3822,196"/>
+<area shape="rect" id="node39" href="$unary_op_button_8h.html" title=" " alt="" coords="3227,169,3406,196"/>
+<area shape="rect" id="node40" href="$mc_button_8h.html" title=" " alt="" coords="2457,169,2605,196"/>
+<area shape="rect" id="node41" href="$ac_button_8h.html" title=" " alt="" coords="2630,169,2774,196"/>
+<area shape="rect" id="node42" href="$mr_button_8h.html" title=" " alt="" coords="2799,169,2944,196"/>
+<area shape="rect" id="node32" href="$calc_button_8h.html" title=" " alt="" coords="3055,326,3149,353"/>
+<area shape="rect" id="node33" title=" " alt="" coords="3052,408,3152,435"/>
+<area shape="rect" id="node35" href="$op_button_8h.html" title=" " alt="" coords="3142,244,3227,271"/>
+</map>

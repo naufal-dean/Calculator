@@ -1,0 +1,11 @@
+<map id="Calculator/buttons/backspaceButton.h" name="Calculator/buttons/backspaceButton.h">
+<area shape="rect" id="node1" title=" " alt="" coords="174,5,313,47"/>
+<area shape="rect" id="node2" href="$backspace_button_8cpp.html" title=" " alt="" coords="86,95,238,136"/>
+<area shape="rect" id="node3" href="$button_widget_8h.html" title=" " alt="" coords="262,95,390,136"/>
+<area shape="rect" id="node4" href="$main_widget_8h.html" title=" " alt="" coords="186,184,314,225"/>
+<area shape="rect" id="node9" href="$button_widget_8cpp.html" title=" " alt="" coords="338,184,466,225"/>
+<area shape="rect" id="node5" href="$mainwindow_8h.html" title=" " alt="" coords="82,281,247,307"/>
+<area shape="rect" id="node8" href="$main_widget_8cpp.html" title=" " alt="" coords="271,273,399,315"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="5,363,143,389"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title=" " alt="" coords="167,363,346,389"/>
+</map>
