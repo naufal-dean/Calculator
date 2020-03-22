@@ -3,9 +3,13 @@
 
 #include "baseException.h"
 
+/*
+ *  Implementasi Class Excpetion yang akan menghandle apabila
+ * terdapat penggunaan operator yang tidak sesuai
+ */
 class SyntaxErrorException : public BaseException {
 public:
-    SyntaxErrorException();
+    SyntaxErrorException(); //! Konstruktor Kelas
 };
 
 #endif // SYNTAXERROREXCEPTION_H

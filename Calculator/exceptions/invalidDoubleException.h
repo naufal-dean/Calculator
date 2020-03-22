@@ -3,6 +3,10 @@
 
 #include "baseException.h"
 
+/*
+ *  Implementasi Class Excpetion yang akan menghandle apabila
+ *  terdapat peletakan koma yang tidak sesuai
+ */
 class InvalidDoubleException : public BaseException {
 public:
     InvalidDoubleException();

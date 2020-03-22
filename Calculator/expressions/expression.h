@@ -1,6 +1,9 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
+/*
+ * Abstract Base Class Expression
+ */
 template <class T>
 class Expression {
     public:
