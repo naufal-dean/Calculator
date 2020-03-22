@@ -72,28 +72,30 @@ $(function() {
 <a href="mc_button_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MCBUTTON_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MCBUTTON_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calc_button_8h.html">calcButton.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_m_c_button.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_m_c_button.html">MCButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_m_c_button.html#ab8d0537a4afd4245184937780da28434">MCButton</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;signals:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_c_button.html#a26a6558204e071434e00ac1cab78cdf5">mcClicked</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif // MCBUTTON_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calc_button_8h.html">calcButton.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Class ini merupakan representasi backend dari tombol MC</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_m_c_button.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_m_c_button.html">MCButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{    </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_m_c_button.html#ab8d0537a4afd4245184937780da28434">MCButton</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;signals:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_m_c_button.html#a26a6558204e071434e00ac1cab78cdf5">mcClicked</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // MCBUTTON_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="amc_button_8h_html"><div class="ttname"><a href="mc_button_8h.html">mcButton.h</a></div></div>
 <div class="ttc" id="acalc_button_8h_html"><div class="ttname"><a href="calc_button_8h.html">calcButton.h</a></div></div>
-<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:6</div></div>
-<div class="ttc" id="aclass_m_c_button_html_a26a6558204e071434e00ac1cab78cdf5"><div class="ttname"><a href="class_m_c_button.html#a26a6558204e071434e00ac1cab78cdf5">MCButton::mcClicked</a></div><div class="ttdeci">void mcClicked()</div></div>
-<div class="ttc" id="aclass_m_c_button_html_ab8d0537a4afd4245184937780da28434"><div class="ttname"><a href="class_m_c_button.html#ab8d0537a4afd4245184937780da28434">MCButton::MCButton</a></div><div class="ttdeci">MCButton()</div><div class="ttdef"><b>Definition:</b> mcButton.cpp:3</div></div>
-<div class="ttc" id="aclass_m_c_button_html"><div class="ttname"><a href="class_m_c_button.html">MCButton</a></div><div class="ttdef"><b>Definition:</b> mcButton.h:7</div></div>
+<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:9</div></div>
+<div class="ttc" id="aclass_m_c_button_html_a26a6558204e071434e00ac1cab78cdf5"><div class="ttname"><a href="class_m_c_button.html#a26a6558204e071434e00ac1cab78cdf5">MCButton::mcClicked</a></div><div class="ttdeci">void mcClicked()</div><div class="ttdoc">Sinyal bahwa tombol MC diklik.</div></div>
+<div class="ttc" id="aclass_m_c_button_html_ab8d0537a4afd4245184937780da28434"><div class="ttname"><a href="class_m_c_button.html#ab8d0537a4afd4245184937780da28434">MCButton::MCButton</a></div><div class="ttdeci">MCButton()</div><div class="ttdoc">Konstruktor kelas.</div><div class="ttdef"><b>Definition:</b> mcButton.cpp:3</div></div>
+<div class="ttc" id="aclass_m_c_button_html"><div class="ttname"><a href="class_m_c_button.html">MCButton</a></div><div class="ttdef"><b>Definition:</b> mcButton.h:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

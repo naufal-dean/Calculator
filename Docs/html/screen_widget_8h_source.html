@@ -81,44 +81,49 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_screen_widget.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_screen_widget.html">ScreenWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QGridLayout *mainLayout;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QLineEdit *screen;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> isAns, isErr;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QString lastAns;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> queue &lt;QString&gt; MC;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_screen_widget.html">ScreenWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> handleBackspaceClick();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> handleBinaryOpClick(QString type);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> handleCommaClick();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> handleEqualClick();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> handleNumClick(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> handleUnaryOpClick(QString type);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> handleMCClick();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> handleMRClick();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> handleACClick();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> handleAnsClick();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // SCREENWIDGET_H</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Class widget yang mengatur layar kalkulator beserta handler input dari button</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_screen_widget.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_screen_widget.html">ScreenWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QGridLayout *mainLayout; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    QLineEdit *screen; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> isAns, isErr; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QString lastAns; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> queue &lt;QString&gt; MC; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_screen_widget.html">ScreenWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> handleBackspaceClick();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> handleBinaryOpClick(QString type);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> handleCommaClick();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> handleEqualClick();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> handleNumClick(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> handleUnaryOpClick(QString type);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> handleMCClick();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> handleMRClick();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> handleACClick();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> handleAnsClick();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // SCREENWIDGET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aconstants_8h_html_abdfe45ba580b5a9ee9da404361f84ac9"><div class="ttname"><a href="constants_8h.html#abdfe45ba580b5a9ee9da404361f84ac9">BIN_OP_DIV</a></div><div class="ttdeci">#define BIN_OP_DIV</div><div class="ttdef"><b>Definition:</b> constants.h:7</div></div>
 <div class="ttc" id="aconstants_8h_html_abbd3191ff0f1af4df33af650dc0d78c7"><div class="ttname"><a href="constants_8h.html#abbd3191ff0f1af4df33af650dc0d78c7">BIN_OP_MUL</a></div><div class="ttdeci">#define BIN_OP_MUL</div><div class="ttdef"><b>Definition:</b> constants.h:6</div></div>
 <div class="ttc" id="aconstants_8h_html_aa2f49001be13949a16a57e6c99ab00ad"><div class="ttname"><a href="constants_8h.html#aa2f49001be13949a16a57e6c99ab00ad">COMMA</a></div><div class="ttdeci">#define COMMA</div><div class="ttdef"><b>Definition:</b> constants.h:12</div></div>
 <div class="ttc" id="aconstants_8h_html_a95559de52a48e8cfde88c6e6e360813e"><div class="ttname"><a href="constants_8h.html#a95559de52a48e8cfde88c6e6e360813e">UN_OP_SQRT</a></div><div class="ttdeci">#define UN_OP_SQRT</div><div class="ttdef"><b>Definition:</b> constants.h:10</div></div>
-<div class="ttc" id="aclass_screen_widget_html"><div class="ttname"><a href="class_screen_widget.html">ScreenWidget</a></div><div class="ttdef"><b>Definition:</b> screenWidget.h:13</div></div>
+<div class="ttc" id="aclass_screen_widget_html"><div class="ttname"><a href="class_screen_widget.html">ScreenWidget</a></div><div class="ttdef"><b>Definition:</b> screenWidget.h:16</div></div>
 <div class="ttc" id="aconstants_8h_html_a68795862b84771f4d9411395cdeda1b2"><div class="ttname"><a href="constants_8h.html#a68795862b84771f4d9411395cdeda1b2">BIN_OP_SUB</a></div><div class="ttdeci">#define BIN_OP_SUB</div><div class="ttdef"><b>Definition:</b> constants.h:5</div></div>
-<div class="ttc" id="aclass_screen_widget_html_a59e1efb3d2617aa355b522dd51c79800"><div class="ttname"><a href="class_screen_widget.html#a59e1efb3d2617aa355b522dd51c79800">ScreenWidget::ScreenWidget</a></div><div class="ttdeci">ScreenWidget(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> screenWidget.cpp:7</div></div>
-<div class="ttc" id="aclass_base_exception_html"><div class="ttname"><a href="class_base_exception.html">BaseException</a></div><div class="ttdef"><b>Definition:</b> baseException.h:6</div></div>
-<div class="ttc" id="aclass_base_exception_html_a8c17fb3b2d4d0783c78ef307d7ee9a5f"><div class="ttname"><a href="class_base_exception.html#a8c17fb3b2d4d0783c78ef307d7ee9a5f">BaseException::getMessage</a></div><div class="ttdeci">QString getMessage()</div><div class="ttdef"><b>Definition:</b> baseException.cpp:7</div></div>
+<div class="ttc" id="aclass_screen_widget_html_a59e1efb3d2617aa355b522dd51c79800"><div class="ttname"><a href="class_screen_widget.html#a59e1efb3d2617aa355b522dd51c79800">ScreenWidget::ScreenWidget</a></div><div class="ttdeci">ScreenWidget(QWidget *parent=nullptr)</div><div class="ttdoc">Queue MC MR.</div><div class="ttdef"><b>Definition:</b> screenWidget.cpp:7</div></div>
+<div class="ttc" id="aclass_base_exception_html"><div class="ttname"><a href="class_base_exception.html">BaseException</a></div><div class="ttdef"><b>Definition:</b> baseException.h:12</div></div>
+<div class="ttc" id="aclass_base_exception_html_a8c17fb3b2d4d0783c78ef307d7ee9a5f"><div class="ttname"><a href="class_base_exception.html#a8c17fb3b2d4d0783c78ef307d7ee9a5f">BaseException::getMessage</a></div><div class="ttdeci">QString getMessage()</div><div class="ttdoc">Getter Message Exception.</div><div class="ttdef"><b>Definition:</b> baseException.cpp:7</div></div>
 <div class="ttc" id="aconstants_8h_html_acd4ef14b4a960a7fdcddaf5eb947b08a"><div class="ttname"><a href="constants_8h.html#acd4ef14b4a960a7fdcddaf5eb947b08a">BIN_OP_ADD</a></div><div class="ttdeci">#define BIN_OP_ADD</div><div class="ttdef"><b>Definition:</b> constants.h:4</div></div>
 <div class="ttc" id="ascreen_widget_8h_html"><div class="ttname"><a href="screen_widget_8h.html">screenWidget.h</a></div></div>
-<div class="ttc" id="aclass_parser_html_a858d70c460577188c885f5665369f0d7"><div class="ttname"><a href="class_parser.html#a858d70c460577188c885f5665369f0d7">Parser::parser</a></div><div class="ttdeci">static void parser(QString input, long &amp;result)</div><div class="ttdef"><b>Definition:</b> parser.cpp:43</div></div>
+<div class="ttc" id="aclass_parser_html_a858d70c460577188c885f5665369f0d7"><div class="ttname"><a href="class_parser.html#a858d70c460577188c885f5665369f0d7">Parser::parser</a></div><div class="ttdeci">static void parser(QString input, long &amp;result)</div><div class="ttdoc">Metode untuk melakukan parsing input long.</div><div class="ttdef"><b>Definition:</b> parser.cpp:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

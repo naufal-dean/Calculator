@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['opbutton_291',['OpButton',['../class_op_button.html#afd934677dbe8246627b57ab3ea235390',1,'OpButton']]]
+  ['screenwidget_250',['ScreenWidget',['../class_screen_widget.html#a59e1efb3d2617aa355b522dd51c79800',1,'ScreenWidget']]],
+  ['solve_251',['solve',['../class_add_expression.html#a09900131f3e30e9db118a0bea9a54719',1,'AddExpression::solve()'],['../class_binary_expression.html#ae5bc4252fb4ff5d74e408fb03cd6bbbb',1,'BinaryExpression::solve()'],['../class_divide_expression.html#aac30aca4ce7d8522e87df68edf992060',1,'DivideExpression::solve()'],['../class_expression.html#a40b3352c4564b58cc45553addf9bb973',1,'Expression::solve()'],['../class_multiply_expression.html#ab465e172a55bdc14f96bfafa7fd08a83',1,'MultiplyExpression::solve()'],['../class_negative_expression.html#a69c835fdebb32813c2b3fad5b592874a',1,'NegativeExpression::solve()'],['../class_sqrt_expression.html#acdb6d7a2eaed060e37fab77cbb0a87a8',1,'SqrtExpression::solve()'],['../class_substract_expression.html#acd5ad316f6c7ad1f5217ad83f25a4ab7',1,'SubstractExpression::solve()'],['../class_terminal_expression.html#ae30a4397eb1cb4b0a7f1393a5ad50945',1,'TerminalExpression::solve()'],['../class_unary_expression.html#adf319b4afb50615d0e669b58a3099df0',1,'UnaryExpression::solve()']]],
+  ['sqrtexpression_252',['SqrtExpression',['../class_sqrt_expression.html#a788376b555a64cb3310b17ae3a42b778',1,'SqrtExpression']]],
+  ['substractexpression_253',['SubstractExpression',['../class_substract_expression.html#acd617396983ccbbb988da7a983bcf001',1,'SubstractExpression']]],
+  ['syntaxerrorexception_254',['SyntaxErrorException',['../class_syntax_error_exception.html#af1af55db16cd19f22a581f082bcd1884',1,'SyntaxErrorException']]]
 ];

@@ -77,27 +77,30 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="screen_widget_8h.html">screenWidget.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="button_widget_8h.html">buttonWidget.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_main_widget.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_widget.html">MainWidget</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    QGridLayout *mainLayout;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_screen_widget.html">ScreenWidget</a> *screenWidget;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_button_widget.html">ButtonWidget</a> *buttonWidget;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_main_widget.html#aad53bf5b787be1871bfdd56540d4727f">MainWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif // MAINWIDGET_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Class widget utama yang menyalurkan input dari ButtonWidget ke output pada ScreenWidget</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_main_widget.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_main_widget.html">MainWidget</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QGridLayout *mainLayout; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_screen_widget.html">ScreenWidget</a> *screenWidget; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_button_widget.html">ButtonWidget</a> *buttonWidget; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_main_widget.html#aad53bf5b787be1871bfdd56540d4727f">MainWidget</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif // MAINWIDGET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_main_widget_html_aad53bf5b787be1871bfdd56540d4727f"><div class="ttname"><a href="class_main_widget.html#aad53bf5b787be1871bfdd56540d4727f">MainWidget::MainWidget</a></div><div class="ttdeci">MainWidget(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> mainWidget.cpp:3</div></div>
+<div class="ttc" id="aclass_main_widget_html_aad53bf5b787be1871bfdd56540d4727f"><div class="ttname"><a href="class_main_widget.html#aad53bf5b787be1871bfdd56540d4727f">MainWidget::MainWidget</a></div><div class="ttdeci">MainWidget(QWidget *parent=nullptr)</div><div class="ttdoc">Member button kalkulator.</div><div class="ttdef"><b>Definition:</b> mainWidget.cpp:3</div></div>
 <div class="ttc" id="abutton_widget_8h_html"><div class="ttname"><a href="button_widget_8h.html">buttonWidget.h</a></div></div>
-<div class="ttc" id="aclass_button_widget_html"><div class="ttname"><a href="class_button_widget.html">ButtonWidget</a></div><div class="ttdef"><b>Definition:</b> buttonWidget.h:18</div></div>
-<div class="ttc" id="aclass_screen_widget_html"><div class="ttname"><a href="class_screen_widget.html">ScreenWidget</a></div><div class="ttdef"><b>Definition:</b> screenWidget.h:13</div></div>
+<div class="ttc" id="aclass_button_widget_html"><div class="ttname"><a href="class_button_widget.html">ButtonWidget</a></div><div class="ttdef"><b>Definition:</b> buttonWidget.h:21</div></div>
+<div class="ttc" id="aclass_screen_widget_html"><div class="ttname"><a href="class_screen_widget.html">ScreenWidget</a></div><div class="ttdef"><b>Definition:</b> screenWidget.h:16</div></div>
 <div class="ttc" id="ascreen_widget_8h_html"><div class="ttname"><a href="screen_widget_8h.html">screenWidget.h</a></div></div>
 <div class="ttc" id="amain_widget_8h_html"><div class="ttname"><a href="main_widget_8h.html">mainWidget.h</a></div></div>
-<div class="ttc" id="aclass_main_widget_html"><div class="ttname"><a href="class_main_widget.html">MainWidget</a></div><div class="ttdef"><b>Definition:</b> mainWidget.h:9</div></div>
+<div class="ttc" id="aclass_main_widget_html"><div class="ttname"><a href="class_main_widget.html">MainWidget</a></div><div class="ttdef"><b>Definition:</b> mainWidget.h:12</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

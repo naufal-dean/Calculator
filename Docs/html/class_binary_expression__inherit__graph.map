@@ -1,9 +1,7 @@
 <map id="BinaryExpression&lt; T &gt;" name="BinaryExpression&lt; T &gt;">
-<area shape="rect" id="node1" title=" " alt="" coords="359,145,513,252"/>
+<area shape="rect" id="node1" title=" " alt="" coords="175,145,329,252"/>
 <area shape="rect" id="node3" href="$class_add_expression.html" title=" " alt="" coords="5,300,147,392"/>
-<area shape="rect" id="node4" href="$class_modulo_expression.html" title=" " alt="" coords="171,300,331,392"/>
-<area shape="rect" id="node5" href="$class_multiply_expression.html" title=" " alt="" coords="355,300,517,392"/>
-<area shape="rect" id="node6" href="$class_power_expression.html" title=" " alt="" coords="541,300,696,392"/>
-<area shape="rect" id="node7" href="$class_substract_expression.html" title=" " alt="" coords="721,300,895,392"/>
-<area shape="rect" id="node2" href="$class_expression.html" title=" " alt="" coords="377,5,495,97"/>
+<area shape="rect" id="node4" href="$class_multiply_expression.html" title=" " alt="" coords="171,300,333,392"/>
+<area shape="rect" id="node5" href="$class_substract_expression.html" title=" " alt="" coords="358,300,533,392"/>
+<area shape="rect" id="node2" href="$class_expression.html" title=" " alt="" coords="193,5,311,97"/>
 </map>

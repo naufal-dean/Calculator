@@ -75,24 +75,27 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calc_button_8h.html">calcButton.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_a_c_button.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_c_button.html">ACButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_a_c_button.html#a95a37aacd099076a71e6aacec851c474">ACButton</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;signals:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_c_button.html#ac95ac624e86bb05332bb788840d9a91c">acClicked</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif // ACBUTTON_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Class ini merupakan representasi backend dari tombol AC</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_a_c_button.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_a_c_button.html">ACButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_a_c_button.html#a95a37aacd099076a71e6aacec851c474">ACButton</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;signals:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_a_c_button.html#ac95ac624e86bb05332bb788840d9a91c">acClicked</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif // ACBUTTON_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_a_c_button_html_ac95ac624e86bb05332bb788840d9a91c"><div class="ttname"><a href="class_a_c_button.html#ac95ac624e86bb05332bb788840d9a91c">ACButton::acClicked</a></div><div class="ttdeci">void acClicked()</div></div>
-<div class="ttc" id="aclass_a_c_button_html"><div class="ttname"><a href="class_a_c_button.html">ACButton</a></div><div class="ttdef"><b>Definition:</b> acButton.h:7</div></div>
-<div class="ttc" id="aclass_a_c_button_html_a95a37aacd099076a71e6aacec851c474"><div class="ttname"><a href="class_a_c_button.html#a95a37aacd099076a71e6aacec851c474">ACButton::ACButton</a></div><div class="ttdeci">ACButton()</div><div class="ttdef"><b>Definition:</b> acButton.cpp:3</div></div>
+<div class="ttc" id="aclass_a_c_button_html_ac95ac624e86bb05332bb788840d9a91c"><div class="ttname"><a href="class_a_c_button.html#ac95ac624e86bb05332bb788840d9a91c">ACButton::acClicked</a></div><div class="ttdeci">void acClicked()</div><div class="ttdoc">Sinyal bahwa tombol ac diklik.</div></div>
+<div class="ttc" id="aclass_a_c_button_html"><div class="ttname"><a href="class_a_c_button.html">ACButton</a></div><div class="ttdef"><b>Definition:</b> acButton.h:10</div></div>
+<div class="ttc" id="aclass_a_c_button_html_a95a37aacd099076a71e6aacec851c474"><div class="ttname"><a href="class_a_c_button.html#a95a37aacd099076a71e6aacec851c474">ACButton::ACButton</a></div><div class="ttdeci">ACButton()</div><div class="ttdoc">Konstruktor kelas.</div><div class="ttdef"><b>Definition:</b> acButton.cpp:3</div></div>
 <div class="ttc" id="acalc_button_8h_html"><div class="ttname"><a href="calc_button_8h.html">calcButton.h</a></div></div>
-<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:6</div></div>
+<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:9</div></div>
 <div class="ttc" id="aac_button_8h_html"><div class="ttname"><a href="ac_button_8h.html">acButton.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

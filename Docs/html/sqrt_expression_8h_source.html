@@ -76,25 +76,28 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="unary_expression_8h.html">unaryExpression.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="negative_sqrt_exception_8h.html">exceptions/negativeSqrtException.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_sqrt_expression.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sqrt_expression.html">SqrtExpression</a> : <span class="keyword">public</span> <a class="code" href="class_unary_expression.html">UnaryExpression</a>&lt;double&gt; {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="class_sqrt_expression.html#a788376b555a64cb3310b17ae3a42b778">SqrtExpression</a>(<a class="code" href="class_expression.html">Expression&lt;double&gt;</a> *<a class="code" href="class_unary_expression.html#a5e6fe58f390c858e65eb26d043133700">x</a>);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sqrt_expression.html#acdb6d7a2eaed060e37fab77cbb0a87a8">solve</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif // SQRTEXPRESSION_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * Menghandle Ekspresi Akar dalam parsing</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_sqrt_expression.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sqrt_expression.html">SqrtExpression</a> : <span class="keyword">public</span> <a class="code" href="class_unary_expression.html">UnaryExpression</a>&lt;double&gt; {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="class_sqrt_expression.html#a788376b555a64cb3310b17ae3a42b778">SqrtExpression</a>(<a class="code" href="class_expression.html">Expression&lt;double&gt;</a> *<a class="code" href="class_unary_expression.html#a5e6fe58f390c858e65eb26d043133700">x</a>);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="class_sqrt_expression.html#acdb6d7a2eaed060e37fab77cbb0a87a8">solve</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif // SQRTEXPRESSION_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclass_expression_html_a40b3352c4564b58cc45553addf9bb973"><div class="ttname"><a href="class_expression.html#a40b3352c4564b58cc45553addf9bb973">Expression::solve</a></div><div class="ttdeci">virtual T solve()=0</div></div>
 <div class="ttc" id="asqrt_expression_8h_html"><div class="ttname"><a href="sqrt_expression_8h.html">sqrtExpression.h</a></div></div>
-<div class="ttc" id="aclass_sqrt_expression_html"><div class="ttname"><a href="class_sqrt_expression.html">SqrtExpression</a></div><div class="ttdef"><b>Definition:</b> sqrtExpression.h:8</div></div>
+<div class="ttc" id="aclass_sqrt_expression_html"><div class="ttname"><a href="class_sqrt_expression.html">SqrtExpression</a></div><div class="ttdef"><b>Definition:</b> sqrtExpression.h:11</div></div>
 <div class="ttc" id="anegative_sqrt_exception_8h_html"><div class="ttname"><a href="negative_sqrt_exception_8h.html">negativeSqrtException.h</a></div></div>
-<div class="ttc" id="aclass_negative_sqrt_exception_html"><div class="ttname"><a href="class_negative_sqrt_exception.html">NegativeSqrtException</a></div><div class="ttdef"><b>Definition:</b> negativeSqrtException.h:6</div></div>
-<div class="ttc" id="aclass_unary_expression_html"><div class="ttname"><a href="class_unary_expression.html">UnaryExpression</a></div><div class="ttdef"><b>Definition:</b> unaryExpression.h:7</div></div>
-<div class="ttc" id="aclass_sqrt_expression_html_a788376b555a64cb3310b17ae3a42b778"><div class="ttname"><a href="class_sqrt_expression.html#a788376b555a64cb3310b17ae3a42b778">SqrtExpression::SqrtExpression</a></div><div class="ttdeci">SqrtExpression(Expression&lt; double &gt; *x)</div><div class="ttdef"><b>Definition:</b> sqrtExpression.cpp:3</div></div>
+<div class="ttc" id="aclass_negative_sqrt_exception_html"><div class="ttname"><a href="class_negative_sqrt_exception.html">NegativeSqrtException</a></div><div class="ttdef"><b>Definition:</b> negativeSqrtException.h:10</div></div>
+<div class="ttc" id="aclass_unary_expression_html"><div class="ttname"><a href="class_unary_expression.html">UnaryExpression</a></div><div class="ttdef"><b>Definition:</b> unaryExpression.h:10</div></div>
+<div class="ttc" id="aclass_sqrt_expression_html_a788376b555a64cb3310b17ae3a42b778"><div class="ttname"><a href="class_sqrt_expression.html#a788376b555a64cb3310b17ae3a42b778">SqrtExpression::SqrtExpression</a></div><div class="ttdeci">SqrtExpression(Expression&lt; double &gt; *x)</div><div class="ttdoc">Konstruktor Kelas.</div><div class="ttdef"><b>Definition:</b> sqrtExpression.cpp:3</div></div>
 <div class="ttc" id="aunary_expression_8h_html"><div class="ttname"><a href="unary_expression_8h.html">unaryExpression.h</a></div></div>
-<div class="ttc" id="aclass_sqrt_expression_html_acdb6d7a2eaed060e37fab77cbb0a87a8"><div class="ttname"><a href="class_sqrt_expression.html#acdb6d7a2eaed060e37fab77cbb0a87a8">SqrtExpression::solve</a></div><div class="ttdeci">double solve() override</div><div class="ttdef"><b>Definition:</b> sqrtExpression.cpp:5</div></div>
+<div class="ttc" id="aclass_sqrt_expression_html_acdb6d7a2eaed060e37fab77cbb0a87a8"><div class="ttname"><a href="class_sqrt_expression.html#acdb6d7a2eaed060e37fab77cbb0a87a8">SqrtExpression::solve</a></div><div class="ttdeci">double solve() override</div><div class="ttdoc">Implementasi dari method solve abstract base class.</div><div class="ttdef"><b>Definition:</b> sqrtExpression.cpp:5</div></div>
 <div class="ttc" id="aclass_expression_html"><div class="ttname"><a href="class_expression.html">Expression&lt; double &gt;</a></div></div>
-<div class="ttc" id="aclass_unary_expression_html_a5e6fe58f390c858e65eb26d043133700"><div class="ttname"><a href="class_unary_expression.html#a5e6fe58f390c858e65eb26d043133700">UnaryExpression&lt; double &gt;::x</a></div><div class="ttdeci">Expression&lt; double &gt; * x</div><div class="ttdef"><b>Definition:</b> unaryExpression.h:9</div></div>
+<div class="ttc" id="aclass_unary_expression_html_a5e6fe58f390c858e65eb26d043133700"><div class="ttname"><a href="class_unary_expression.html#a5e6fe58f390c858e65eb26d043133700">UnaryExpression&lt; double &gt;::x</a></div><div class="ttdeci">Expression&lt; double &gt; * x</div><div class="ttdef"><b>Definition:</b> unaryExpression.h:12</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

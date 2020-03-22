@@ -74,25 +74,28 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calc_button_8h.html">calcButton.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_equal_button.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_equal_button.html">EqualButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    Q_OBJECT</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_equal_button.html#a12c00f61b8012cdf9f5b1b49783eb339">EqualButton</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;signals:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_equal_button.html#ad807aac9641cba127bcb3ec967bf81e9">equalClicked</a>();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif // EQUALBUTTON_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Class ini merupakan representasi backend dari tombol sama dengan</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_equal_button.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_equal_button.html">EqualButton</a> : <span class="keyword">public</span> <a class="code" href="class_calc_button.html">CalcButton</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{    </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_equal_button.html#a12c00f61b8012cdf9f5b1b49783eb339">EqualButton</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;signals:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_equal_button.html#ad807aac9641cba127bcb3ec967bf81e9">equalClicked</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> handleClick();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif // EQUALBUTTON_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_equal_button_html"><div class="ttname"><a href="class_equal_button.html">EqualButton</a></div><div class="ttdef"><b>Definition:</b> equalButton.h:6</div></div>
+<div class="ttc" id="aclass_equal_button_html"><div class="ttname"><a href="class_equal_button.html">EqualButton</a></div><div class="ttdef"><b>Definition:</b> equalButton.h:9</div></div>
 <div class="ttc" id="aequal_button_8h_html"><div class="ttname"><a href="equal_button_8h.html">equalButton.h</a></div></div>
-<div class="ttc" id="aclass_equal_button_html_a12c00f61b8012cdf9f5b1b49783eb339"><div class="ttname"><a href="class_equal_button.html#a12c00f61b8012cdf9f5b1b49783eb339">EqualButton::EqualButton</a></div><div class="ttdeci">EqualButton()</div><div class="ttdef"><b>Definition:</b> equalButton.cpp:3</div></div>
+<div class="ttc" id="aclass_equal_button_html_a12c00f61b8012cdf9f5b1b49783eb339"><div class="ttname"><a href="class_equal_button.html#a12c00f61b8012cdf9f5b1b49783eb339">EqualButton::EqualButton</a></div><div class="ttdeci">EqualButton()</div><div class="ttdoc">Konstruktor kelas.</div><div class="ttdef"><b>Definition:</b> equalButton.cpp:3</div></div>
 <div class="ttc" id="acalc_button_8h_html"><div class="ttname"><a href="calc_button_8h.html">calcButton.h</a></div></div>
-<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:6</div></div>
-<div class="ttc" id="aclass_equal_button_html_ad807aac9641cba127bcb3ec967bf81e9"><div class="ttname"><a href="class_equal_button.html#ad807aac9641cba127bcb3ec967bf81e9">EqualButton::equalClicked</a></div><div class="ttdeci">void equalClicked()</div></div>
+<div class="ttc" id="aclass_calc_button_html"><div class="ttname"><a href="class_calc_button.html">CalcButton</a></div><div class="ttdef"><b>Definition:</b> calcButton.h:9</div></div>
+<div class="ttc" id="aclass_equal_button_html_ad807aac9641cba127bcb3ec967bf81e9"><div class="ttname"><a href="class_equal_button.html#ad807aac9641cba127bcb3ec967bf81e9">EqualButton::equalClicked</a></div><div class="ttdeci">void equalClicked()</div><div class="ttdoc">Sinyal bahwa tombol sama dengan diklik.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
