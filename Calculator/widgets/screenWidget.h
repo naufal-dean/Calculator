@@ -5,6 +5,7 @@
 #include <QGridLayout>
 #include <QLineEdit>
 #include <QFont>
+#include "../constants/constants.h"
 
 class ScreenWidget : public QWidget
 {
@@ -15,8 +16,9 @@ private:
 public:
     ScreenWidget(QWidget *parent = nullptr);
 private slots:
-    void handleNumClick(int value);
     void handleBackspaceClick();
+    void handleBinaryOpClick(QString type);
+    void handleNumClick(int value);
 };
 
 #endif // SCREENWIDGET_H

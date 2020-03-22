@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     buttons/backspaceButton.cpp \
+    buttons/binaryOpButton.cpp \
     buttons/calcButton.cpp \
     buttons/numButton.cpp \
     expressions/divideExpression.cpp \
@@ -29,8 +30,10 @@ SOURCES += \
 
 HEADERS += \
     buttons/backspaceButton.h \
+    buttons/binaryOpButton.h \
     buttons/calcButton.h \
     buttons/numButton.h \
+    constants/constants.h \
     exception/baseException.h \
     exception/undefinedNumberException.h \
     exception/unrealNumberException.h \

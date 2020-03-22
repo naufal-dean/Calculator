@@ -15,19 +15,28 @@ ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
     setLayout(mainLayout);
 }
 
-void ScreenWidget::handleNumClick(int value) {
-    if (screen->text() == "0") {
-        screen->setText(QString::number(value));
-    } else {
-        screen->setText(screen->text().append(QString::number(value)));
-    }
-}
-
 void ScreenWidget::handleBackspaceClick() {
     int textLen = screen->text().length();
     if (textLen == 1) {
         screen->setText("0");
     } else {
         screen->setText(screen->text().mid(0, textLen - 1));
+    }
+}
+
+void ScreenWidget::handleBinaryOpClick(QString type) {
+    int textLen = screen->text().length();
+    QChar lastChar = screen->text().data()[textLen - 1];
+    if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB || lastChar == BIN_OP_MUL || lastChar == BIN_OP_DIV) {
+        screen->setText(screen->text().mid(0, textLen - 1));
+    }
+    screen->setText(screen->text().append(type));
+}
+
+void ScreenWidget::handleNumClick(int value) {
+    if (screen->text() == "0") {
+        screen->setText(QString::number(value));
+    } else {
+        screen->setText(screen->text().append(QString::number(value)));
     }
 }

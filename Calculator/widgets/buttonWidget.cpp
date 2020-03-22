@@ -2,6 +2,22 @@
 
 ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
 {
+    // Create & Connect backspace button
+    btnBs = new BackspaceButton();
+    connect(btnBs, SIGNAL(backspaceClicked()), this, SLOT(handleBackspaceClick()));
+
+    // Create binary op button
+    btnAdd = new BinaryOpButton(BIN_OP_ADD);
+    btnSub = new BinaryOpButton(BIN_OP_SUB);
+    btnMul = new BinaryOpButton(BIN_OP_MUL);
+    btnDiv = new BinaryOpButton(BIN_OP_DIV);
+
+    // Connect binary op button
+    connect(btnAdd, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
+    connect(btnSub, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
+    connect(btnMul, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
+    connect(btnDiv, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
+
     // Create num button
     btn1 = new NumButton(1);
     btn2 = new NumButton(2);
@@ -26,32 +42,38 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     connect(btn9, SIGNAL(numClicked(int)), this, SLOT(handleNumClick(int)));
     connect(btn0, SIGNAL(numClicked(int)), this, SLOT(handleNumClick(int)));
 
-    // Create & Connect backspace button
-    btnBs = new BackspaceButton();
-    connect(btnBs, SIGNAL(backspaceClicked()), this, SLOT(handleBackspaceClick()));
-
     // Setting layout
     mainLayout = new QGridLayout;
 
-    mainLayout->addWidget(btn1, 1, 0);
-    mainLayout->addWidget(btn2, 1, 1);
-    mainLayout->addWidget(btn3, 1, 2);
-    mainLayout->addWidget(btn4, 2, 0);
-    mainLayout->addWidget(btn5, 2, 1);
-    mainLayout->addWidget(btn6, 2, 2);
-    mainLayout->addWidget(btn7, 3, 0);
-    mainLayout->addWidget(btn8, 3, 1);
-    mainLayout->addWidget(btn9, 3, 2);
-    mainLayout->addWidget(btn0, 4, 1);
     mainLayout->addWidget(btnBs, 0, 4);
+
+    mainLayout->addWidget(btnDiv, 1, 4);
+    mainLayout->addWidget(btnMul, 2, 4);
+    mainLayout->addWidget(btnSub, 3, 4);
+    mainLayout->addWidget(btnAdd, 4, 4);
+
+    mainLayout->addWidget(btn1, 2, 0);
+    mainLayout->addWidget(btn2, 2, 1);
+    mainLayout->addWidget(btn3, 2, 2);
+    mainLayout->addWidget(btn4, 3, 0);
+    mainLayout->addWidget(btn5, 3, 1);
+    mainLayout->addWidget(btn6, 3, 2);
+    mainLayout->addWidget(btn7, 4, 0);
+    mainLayout->addWidget(btn8, 4, 1);
+    mainLayout->addWidget(btn9, 4, 2);
+    mainLayout->addWidget(btn0, 5, 1);
 
     setLayout(mainLayout);
 }
 
-void ButtonWidget::handleNumClick(int value) {
-    emit numClicked(value);
-}
-
 void ButtonWidget::handleBackspaceClick() {
     emit backspaceClicked();
+}
+
+void ButtonWidget::handleBinaryOpClick(QString type) {
+    emit binaryOpClicked(type);
+}
+
+void ButtonWidget::handleNumClick(int value) {
+    emit numClicked(value);
 }
