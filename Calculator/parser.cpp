@@ -34,6 +34,12 @@ int Parser::binOperatorLowFinder(const QString &input) {
     return idx;
 }
 
+double Parser::roundDouble(double value, int roundedTo) {
+    double result = rint(pow(10, roundedTo) * value);
+    result = (double) result / pow(10, roundedTo);
+    return result;
+}
+
 void Parser::parser(QString input, long &result) {
     // Zeroth check
     if (!(input[input.length() - 1].isDigit()))
@@ -86,8 +92,7 @@ void Parser::parser(QString input, double &result, int roundedTo) {
         } else { // input[idx] == BIN_OP_SUB
             expr = new SubstractExpression<double>(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
         }
-        result = (int) (expr->solve() * pow(10, roundedTo) + .5);
-        result = (double) result / pow(10, roundedTo);
+        result = roundDouble(expr->solve(), roundedTo);
     } else { // not found
         idx = binOperatorHighFinder(input);
         if (idx != input.length()) { // found
@@ -98,8 +103,7 @@ void Parser::parser(QString input, double &result, int roundedTo) {
             } else { // input[idx] == BIN_OP_DIV
                 expr = new DivideExpression(new TerminalExpression<double>(leftResult), new TerminalExpression<double>(rightResult));
             }
-            result = (int) (expr->solve() * pow(10, roundedTo) + .5);
-            result = (double) result / pow(10, roundedTo);
+            result = roundDouble(expr->solve(), roundedTo);
         } else { // not found, only unary operator
             // Check double validity and wether any unary operator between digits
             int i = 0, commaCount = 0; bool digitFound = false;
@@ -128,11 +132,9 @@ void Parser::parser(QString input, double &result, int roundedTo) {
                 Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
                 for (int i = 0; i < sqrtCount; i++)
                     expr = new SqrtExpression(expr);
-                result = (int) (expr->solve() * pow(10, roundedTo) + .5);
-                result = (double) result / pow(10, roundedTo);
+                result = roundDouble(expr->solve(), roundedTo);
             } else {
-                result = (int) (input.toDouble() * pow(10, roundedTo) + .5);
-                result = (double) result / pow(10, roundedTo);
+                result = roundDouble(input.toDouble(), roundedTo);
             }
         }
     }

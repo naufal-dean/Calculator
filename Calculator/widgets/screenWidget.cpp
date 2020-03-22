@@ -39,7 +39,7 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
     this->isAns = false;
     QChar lastChar = screen->text().data()[textLen - 1];
     QChar secondLastChar = screen->text().data()[textLen - 2];
-
+    qDebug() << "tet";
     if (type == BIN_OP_SUB) {
         if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB) {
             screen->setText(screen->text().mid(0, textLen - 1));

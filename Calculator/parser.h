@@ -29,6 +29,7 @@ private:
     static int binOperatorHighFinder(const QString &input);
     static bool isLowBinaryOp(QChar input);
     static int binOperatorLowFinder(const QString &input);
+    static double roundDouble(double value, int roundedTo);
 public:
     static void parser(QString input, long &result);
     static void parser(QString input, double &result, int roundedTo);
