@@ -23,6 +23,7 @@ SOURCES += \
     buttons/numButton.cpp \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
+    exceptions/baseException.cpp \
     exceptions/undefinedNumberException.cpp \
     exceptions/unrealNumberException.cpp \
     expressions/divideExpression.cpp \

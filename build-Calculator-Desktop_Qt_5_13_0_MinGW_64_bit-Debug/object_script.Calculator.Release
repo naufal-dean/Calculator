@@ -5,6 +5,9 @@ release/equalButton.o
 release/numButton.o
 release/opButton.o
 release/unaryOpButton.o
+release/baseException.o
+release/undefinedNumberException.o
+release/unrealNumberException.o
 release/divideExpression.o
 release/sqrtExpression.o
 release/buttonWidget.o

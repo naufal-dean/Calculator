@@ -6,7 +6,7 @@ double SqrtExpression::solve() {
     if (this->x->solve() > 0)
        return sqrt(this->x->solve());
     else if (this->x->solve() == 0)
-        throw UndefinedNumberException<double>(this->x->solve());
+        throw new UndefinedNumberException();
     else
-        throw UnrealNumberException<double>(this->x->solve());
+        throw new UnrealNumberException();
 }

@@ -5,6 +5,9 @@ debug/equalButton.o
 debug/numButton.o
 debug/opButton.o
 debug/unaryOpButton.o
+debug/baseException.o
+debug/undefinedNumberException.o
+debug/unrealNumberException.o
 debug/divideExpression.o
 debug/sqrtExpression.o
 debug/buttonWidget.o

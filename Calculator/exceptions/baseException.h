@@ -1,11 +1,14 @@
 #ifndef BASEEXCEPTION_H
 #define BASEEXCEPTION_H
 
-template <class T>
+#include <QString>
+
 class BaseException {
-    public:
-        // menuliskan pesan kesalahan ke stdout
-        virtual void printMessage() = 0;
+private:
+    QString message;
+public:
+    BaseException(QString message);
+    QString getMessage();
 };
 
 
