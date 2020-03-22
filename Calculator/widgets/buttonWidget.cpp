@@ -18,6 +18,10 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     connect(btnMul, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
     connect(btnDiv, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
 
+    // Create & Connect equal button
+    btnEq = new EqualButton();
+    connect(btnEq, SIGNAL(equalClicked()), this, SLOT(handleEqualClick()));
+
     // Create num button
     btn1 = new NumButton(1);
     btn2 = new NumButton(2);
@@ -52,6 +56,8 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btnSub, 3, 4);
     mainLayout->addWidget(btnAdd, 4, 4);
 
+    mainLayout->addWidget(btnEq, 5, 4);
+
     mainLayout->addWidget(btn1, 2, 0);
     mainLayout->addWidget(btn2, 2, 1);
     mainLayout->addWidget(btn3, 2, 2);
@@ -72,6 +78,10 @@ void ButtonWidget::handleBackspaceClick() {
 
 void ButtonWidget::handleBinaryOpClick(QString type) {
     emit binaryOpClicked(type);
+}
+
+void ButtonWidget::handleEqualClick() {
+    emit equalClicked();
 }
 
 void ButtonWidget::handleNumClick(int value) {

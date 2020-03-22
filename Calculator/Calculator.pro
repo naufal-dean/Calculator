@@ -19,6 +19,7 @@ SOURCES += \
     buttons/backspaceButton.cpp \
     buttons/binaryOpButton.cpp \
     buttons/calcButton.cpp \
+    buttons/equalButton.cpp \
     buttons/numButton.cpp \
     expressions/divideExpression.cpp \
     expressions/sqrtExpression.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     buttons/backspaceButton.h \
     buttons/binaryOpButton.h \
     buttons/calcButton.h \
+    buttons/equalButton.h \
     buttons/numButton.h \
     constants/constants.h \
     exception/baseException.h \
