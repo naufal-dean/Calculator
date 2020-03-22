@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Calculator/buttons/equalButton.h"
+#include "../../Final/src/buttons/equalButton.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

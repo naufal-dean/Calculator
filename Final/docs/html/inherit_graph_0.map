@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_base_exception.html" title=" " alt="" coords="5,81,116,108"/>
-<area shape="rect" id="node2" href="$class_division_by_zero_exception.html" title=" " alt="" coords="164,5,329,32"/>
-<area shape="rect" id="node3" href="$class_invalid_double_exception.html" title=" " alt="" coords="169,56,324,83"/>
-<area shape="rect" id="node4" href="$class_negative_sqrt_exception.html" title=" " alt="" coords="170,107,323,133"/>
-<area shape="rect" id="node5" href="$class_syntax_error_exception.html" title=" " alt="" coords="172,157,321,184"/>
-</map>

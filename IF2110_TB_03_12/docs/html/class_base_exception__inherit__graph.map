@@ -1,0 +1,7 @@
+<map id="BaseException" name="BaseException">
+<area shape="rect" id="node1" title=" " alt="" coords="335,5,466,97"/>
+<area shape="rect" id="node2" href="$class_division_by_zero_exception.html" title=" " alt="" coords="5,145,191,223"/>
+<area shape="rect" id="node3" href="$class_invalid_double_exception.html" title=" " alt="" coords="215,145,389,223"/>
+<area shape="rect" id="node4" href="$class_negative_sqrt_exception.html" title=" " alt="" coords="414,145,587,223"/>
+<area shape="rect" id="node5" href="$class_syntax_error_exception.html" title=" " alt="" coords="612,145,781,223"/>
+</map>

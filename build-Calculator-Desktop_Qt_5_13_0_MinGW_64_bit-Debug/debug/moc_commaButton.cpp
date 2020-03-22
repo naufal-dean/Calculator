@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Calculator/buttons/commaButton.h"
+#include "../../Final/src/buttons/commaButton.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

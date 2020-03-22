@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../Calculator/buttons/binaryOpButton.h"
+#include "../../Final/src/buttons/binaryOpButton.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
