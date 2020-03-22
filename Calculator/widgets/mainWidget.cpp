@@ -12,6 +12,7 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent), screenWidget(new Scre
     connect(buttonWidget, SIGNAL(mcClicked()), screenWidget, SLOT(handleMCClick()));
     connect(buttonWidget, SIGNAL(mrClicked()), screenWidget, SLOT(handleMRClick()));
     connect(buttonWidget, SIGNAL(acClicked()), screenWidget, SLOT(handleACClick()));
+    connect(buttonWidget, SIGNAL(ansClicked()), screenWidget, SLOT(handleAnsClick()));
 
     // Setting layout
     mainLayout = new QGridLayout;

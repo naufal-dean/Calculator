@@ -16,8 +16,8 @@ class ScreenWidget : public QWidget
 private:
     QGridLayout *mainLayout;
     QLineEdit *screen;
-    bool isAns;
-    double lastAns;
+    bool isAns, isErr;
+    QString lastAns;
     static queue <QString> MC;
 public:
     ScreenWidget(QWidget *parent = nullptr);
@@ -31,6 +31,7 @@ private slots:
     void handleMCClick();
     void handleMRClick();
     void handleACClick();
+    void handleAnsClick();
 };
 
 #endif // SCREENWIDGET_H

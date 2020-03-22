@@ -26,18 +26,6 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     btnEq = new EqualButton();
     connect(btnEq, SIGNAL(equalClicked()), this, SLOT(handleEqualClick()));
 
-    // Create & Connect MC button
-    btnMC = new MCButton();
-    connect(btnMC, SIGNAL(mcClicked()), this, SLOT(handleMCClick()));
-
-    // Create & Connect MR button
-    btnMR = new MRButton();
-    connect(btnMR, SIGNAL(mrClicked()), this, SLOT(handleMRClick()));
-
-    // Create & Connect AC button
-    btnAC = new ACButton();
-    connect(btnAC, SIGNAL(acClicked()), this, SLOT(handleACClick()));
-
     // Create num button
     btn1 = new NumButton(1);
     btn2 = new NumButton(2);
@@ -68,6 +56,22 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     // Connect unary op button
     connect(btnSqrt, SIGNAL(unaryOpClicked(QString)), this, SLOT(handleUnaryOpClick(QString)));
 
+    // Create & Connect MC button
+    btnMC = new MCButton();
+    connect(btnMC, SIGNAL(mcClicked()), this, SLOT(handleMCClick()));
+
+    // Create & Connect MR button
+    btnMR = new MRButton();
+    connect(btnMR, SIGNAL(mrClicked()), this, SLOT(handleMRClick()));
+
+    // Create & Connect AC button
+    btnAC = new ACButton();
+    connect(btnAC, SIGNAL(acClicked()), this, SLOT(handleACClick()));
+
+    // Create & Connect Ans button
+    btnAns = new AnsButton();
+    connect(btnAns, SIGNAL(ansClicked()), this, SLOT(handleAnsClick()));
+
     // Setting layout
     mainLayout = new QGridLayout;
 
@@ -81,9 +85,6 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btnComma, 5, 2);
 
     mainLayout->addWidget(btnEq, 5, 3);
-    mainLayout->addWidget(btnMC,0,0);
-    mainLayout->addWidget(btnMR,0,1);
-    mainLayout->addWidget(btnAC,0,2);
 
     mainLayout->addWidget(btn1, 2, 0);
     mainLayout->addWidget(btn2, 2, 1);
@@ -95,6 +96,11 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btn8, 4, 1);
     mainLayout->addWidget(btn9, 4, 2);
     mainLayout->addWidget(btn0, 5, 1);
+
+    mainLayout->addWidget(btnMC,0,0);
+    mainLayout->addWidget(btnMR,0,1);
+    mainLayout->addWidget(btnAC,0,2);
+    mainLayout->addWidget(btnAns,5,0);
 
     mainLayout->addWidget(btnSqrt, 1, 2);
 
@@ -135,4 +141,8 @@ void ButtonWidget::handleMRClick() {
 
 void ButtonWidget::handleACClick() {
     emit acClicked();
+}
+
+void ButtonWidget::handleAnsClick() {
+    emit ansClicked();
 }

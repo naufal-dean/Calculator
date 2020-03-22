@@ -5,9 +5,6 @@
 #include <cmath>
 #include <QString>
 
-#include "exceptions/baseException.h"
-#include "exceptions/undefinedNumberException.h"
-#include "exceptions/unrealNumberException.h"
 #include "exceptions/syntaxErrorException.h"
 #include "exceptions/invalidDoubleException.h"
 #include "expressions/expression.h"

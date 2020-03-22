@@ -2,7 +2,7 @@
 #define DIVIDEEXPRESSION_H
 
 #include "binaryExpression.h"
-#include "exceptions/undefinedNumberException.h"
+#include "exceptions/divisionByZeroException.h"
 
 class DivideExpression : public BinaryExpression<double> {
     public:

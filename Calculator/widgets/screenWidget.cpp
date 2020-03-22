@@ -7,7 +7,8 @@ queue<QString> ScreenWidget::MC;
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
     this->isAns = true;
-    this->lastAns = 0;
+    this->isErr = false;
+    this->lastAns = "0";
 
     // Setting layout
     screen = new QLineEdit("0");
@@ -24,9 +25,10 @@ ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 
 void ScreenWidget::handleBackspaceClick() {
     int textLen = screen->text().length();
-    if (textLen == 1) {
+    if (textLen == 1 || isErr) {
         screen->setText("0");
         this->isAns = true;
+        this->isErr = false;
     } else {
         screen->setText(screen->text().mid(0, textLen - 1));
     }
@@ -56,6 +58,7 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
 
 void ScreenWidget::handleCommaClick() {
     screen->setText(screen->text().append(COMMA));
+    this->isAns = false;
 }
 
 void ScreenWidget::handleEqualClick() {
@@ -73,33 +76,35 @@ void ScreenWidget::handleEqualClick() {
             double result = -1;
             Parser::parser(screen->text(), result, 3);
             screen->setText(QString::number(result));
-            this->lastAns = result;
+            this->lastAns = screen->text();
         } else { // long
             long result = -1;
             Parser::parser(screen->text(), result);
             screen->setText(QString::number(result));
-            this->lastAns = (double) result;
+            this->lastAns = screen->text();
         }
     } catch (BaseException * err) {
         screen->setText(err->getMessage());
+        this->isErr = true;
     } catch (...) {
         screen->setText("Some error encountered");
+        this->isErr = true;
     }
 }
 
 void ScreenWidget::handleNumClick(int value) {
-    if (isAns) {
+    if (isAns || isErr) {
         screen->setText(QString::number(value));
-        isAns = false;
+        isAns = isErr = false;
     } else {
         screen->setText(screen->text().append(QString::number(value)));
     }
 }
 
 void ScreenWidget::handleUnaryOpClick(QString type) {
-    if (isAns) {
+    if (isAns || isErr) {
         screen->setText(type);
-        isAns = false;
+        isAns = isErr = false;
     } else {
         screen->setText(screen->text().append(type));
     }
@@ -120,17 +125,20 @@ void ScreenWidget::handleMCClick() {
             Parser::parser(screen->text(), result, 3);
             ScreenWidget::MC.push(QString::number(result));
             screen->setText(QString::number(result));
-            this->lastAns = result;
+            this->lastAns = screen->text();
         } else { // long
             long result = -1;
             Parser::parser(screen->text(), result);
             ScreenWidget::MC.push(QString::number(result));
             screen->setText(QString::number(result));
-            this->lastAns = (double) result;
+            this->lastAns = screen->text();
         }
+        this->isErr = false;
     } catch (BaseException * err) {
+        this->isErr = true;
         screen->setText(err->getMessage());
     } catch (...) {
+        this->isErr = true;
         screen->setText("Some error encountered");
     }
 }
@@ -138,9 +146,15 @@ void ScreenWidget::handleMCClick() {
 void ScreenWidget::handleMRClick() {
     if (ScreenWidget::MC.size() == 0) {
         screen->setText("MR empty");
+        this->isErr = true;
     } else {
-        screen->setText(screen->text().append(ScreenWidget::MC.front()));
+        if (screen->text() == "0") {
+            screen->setText(ScreenWidget::MC.front());
+        } else {
+            screen->setText(screen->text().append(ScreenWidget::MC.front()));
+        }
         ScreenWidget::MC.pop();
+        this->isErr = false;
     }
 }
 
@@ -150,6 +164,22 @@ void ScreenWidget::handleACClick() {
         ScreenWidget::MC.pop();
     }
     screen->setText("0");
+    this->lastAns = "0";
     this->isAns = true;
+    this->isErr = false;
 }
+
+void ScreenWidget::handleAnsClick() {
+    if (isErr) {
+        screen->setText(this->lastAns);
+        this->isErr = false;
+    } else {
+        if (screen->text() == "0") {
+            screen->setText(this->lastAns);
+        } else {
+            screen->setText(screen->text().append(this->lastAns));
+        }
+    }
+}
+
 

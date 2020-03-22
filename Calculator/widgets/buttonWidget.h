@@ -10,9 +10,10 @@
 #include "../buttons/numButton.h"
 #include "../buttons/unaryOpButton.h"
 #include "../buttons/mcButton.h"
-#include "../constants/constants.h"
 #include "../buttons/acButton.h"
 #include "../buttons/mrButton.h"
+#include "../buttons/ansButton.h"
+#include "../constants/constants.h"
 
 class ButtonWidget : public QWidget
 {
@@ -28,6 +29,7 @@ private:
     MCButton *btnMC;
     MRButton *btnMR;
     ACButton *btnAC;
+    AnsButton *btnAns;
 
 public:
     ButtonWidget(QWidget *parent = nullptr);
@@ -41,6 +43,7 @@ signals:
     void mcClicked();
     void mrClicked();
     void acClicked();
+    void ansClicked();
 private slots:
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
@@ -51,6 +54,7 @@ private slots:
     void handleMCClick();
     void handleMRClick();
     void handleACClick();
+    void handleAnsClick();
 };
 
 #endif // BUTTONWIDGET_H

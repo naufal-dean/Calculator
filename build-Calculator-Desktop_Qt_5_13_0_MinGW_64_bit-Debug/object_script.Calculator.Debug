@@ -1,4 +1,5 @@
 debug/acButton.o
+debug/ansButton.o
 debug/backspaceButton.o
 debug/binaryOpButton.o
 debug/calcButton.o
@@ -10,7 +11,9 @@ debug/numButton.o
 debug/opButton.o
 debug/unaryOpButton.o
 debug/baseException.o
+debug/divisionByZeroException.o
 debug/invalidDoubleException.o
+debug/negativeSqrtException.o
 debug/syntaxErrorException.o
 debug/undefinedNumberException.o
 debug/unrealNumberException.o
@@ -22,6 +25,7 @@ debug/screenWidget.o
 debug/main.o
 debug/mainwindow.o
 debug/moc_acButton.o
+debug/moc_ansButton.o
 debug/moc_backspaceButton.o
 debug/moc_binaryOpButton.o
 debug/moc_calcButton.o

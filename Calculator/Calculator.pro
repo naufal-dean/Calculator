@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     buttons/acButton.cpp \
+    buttons/ansButton.cpp \
     buttons/backspaceButton.cpp \
     buttons/binaryOpButton.cpp \
     buttons/calcButton.cpp \
@@ -28,7 +29,9 @@ SOURCES += \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
     exceptions/baseException.cpp \
+    exceptions/divisionByZeroException.cpp \
     exceptions/invalidDoubleException.cpp \
+    exceptions/negativeSqrtException.cpp \
     exceptions/syntaxErrorException.cpp \
     exceptions/undefinedNumberException.cpp \
     exceptions/unrealNumberException.cpp \
@@ -42,6 +45,7 @@ SOURCES += \
 
 HEADERS += \
     buttons/acButton.h \
+    buttons/ansButton.h \
     buttons/backspaceButton.h \
     buttons/binaryOpButton.h \
     buttons/calcButton.h \
@@ -54,7 +58,9 @@ HEADERS += \
     buttons/unaryOpButton.h \
     constants/constants.h \
     exceptions/baseException.h \
+    exceptions/divisionByZeroException.h \
     exceptions/invalidDoubleException.h \
+    exceptions/negativeSqrtException.h \
     exceptions/syntaxErrorException.h \
     exceptions/undefinedNumberException.h \
     exceptions/unrealNumberException.h \
