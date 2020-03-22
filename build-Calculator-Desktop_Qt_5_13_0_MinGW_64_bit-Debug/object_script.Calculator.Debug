@@ -15,8 +15,6 @@ debug/divisionByZeroException.o
 debug/invalidDoubleException.o
 debug/negativeSqrtException.o
 debug/syntaxErrorException.o
-debug/undefinedNumberException.o
-debug/unrealNumberException.o
 debug/divideExpression.o
 debug/sqrtExpression.o
 debug/buttonWidget.o

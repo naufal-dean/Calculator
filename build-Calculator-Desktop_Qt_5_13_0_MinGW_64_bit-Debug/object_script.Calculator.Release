@@ -15,8 +15,6 @@ release/divisionByZeroException.o
 release/invalidDoubleException.o
 release/negativeSqrtException.o
 release/syntaxErrorException.o
-release/undefinedNumberException.o
-release/unrealNumberException.o
 release/divideExpression.o
 release/sqrtExpression.o
 release/buttonWidget.o

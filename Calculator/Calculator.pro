@@ -33,8 +33,6 @@ SOURCES += \
     exceptions/invalidDoubleException.cpp \
     exceptions/negativeSqrtException.cpp \
     exceptions/syntaxErrorException.cpp \
-    exceptions/undefinedNumberException.cpp \
-    exceptions/unrealNumberException.cpp \
     expressions/divideExpression.cpp \
     expressions/sqrtExpression.cpp \
     widgets/buttonWidget.cpp \
@@ -62,8 +60,6 @@ HEADERS += \
     exceptions/invalidDoubleException.h \
     exceptions/negativeSqrtException.h \
     exceptions/syntaxErrorException.h \
-    exceptions/undefinedNumberException.h \
-    exceptions/unrealNumberException.h \
     expressions/addExpression.h \
     expressions/binaryExpression.h \
     expressions/divideExpression.h \
