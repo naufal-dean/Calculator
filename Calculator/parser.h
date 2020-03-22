@@ -3,9 +3,9 @@
 
 #include <iostream>
 #include <QString>
-#include "exception/baseException.h"
-#include "exception/undefinedNumberException.h"
-#include "exception/unrealNumberException.h"
+#include "exceptions/baseException.h"
+#include "exceptions/undefinedNumberException.h"
+#include "exceptions/unrealNumberException.h"
 #include "expressions/expression.h"
 #include "expressions/terminalExpression.h"
 #include "expressions/binaryExpression.h"
