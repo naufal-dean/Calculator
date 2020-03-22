@@ -40,9 +40,9 @@ HEADERS += \
     buttons/opButton.h \
     buttons/unaryOpButton.h \
     constants/constants.h \
-    exception/baseException.h \
-    exception/undefinedNumberException.h \
-    exception/unrealNumberException.h \
+    exceptions/baseException.h \
+    exceptions/undefinedNumberException.h \
+    exceptions/unrealNumberException.h \
     expressions/addExpression.h \
     expressions/binaryExpression.h \
     expressions/divideExpression.h \
@@ -53,6 +53,7 @@ HEADERS += \
     expressions/substractExpression.h \
     expressions/terminalExpression.h \
     expressions/unaryExpression.h \
+    parser.h \
     widgets/buttonWidget.h \
     widgets/mainWidget.h \
     widgets/screenWidget.h \
