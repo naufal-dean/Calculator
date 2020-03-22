@@ -151,6 +151,24 @@ public:
                 result = (int) (expr->solve() * pow(10, roundedTo) + .5);
                 result = (double) result / pow(10, roundedTo);
             } else { // not found, only unary operator
+                // Check double validity and wether any unary operator between digits
+                int i = 0, commaCount = 0; bool digitFound = false;
+                while (i < input.length()) {
+                    // Comma count
+                    if (input[i] == COMMA) {
+                        commaCount++;
+                        if (commaCount > 1)
+                            throw new InvalidDoubleException();
+                    }
+                    // Check unary operator
+                    if (digitFound && (!input[i].isDigit() && input[i] != COMMA))
+                        throw new SyntaxErrorException();
+                    // Check if any digit is found
+                    if (input[i].isDigit())
+                        digitFound = true;
+                    i++;
+                }
+                // Process
                 if (input[0] == UN_OP_SQRT) {
                     // Count sqrt
                     qDebug() << "parser in";
