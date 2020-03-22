@@ -21,6 +21,7 @@ SOURCES += \
     buttons/calcButton.cpp \
     buttons/commaButton.cpp \
     buttons/equalButton.cpp \
+    buttons/mcButton.cpp \
     buttons/numButton.cpp \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     buttons/calcButton.h \
     buttons/commaButton.h \
     buttons/equalButton.h \
+    buttons/mcButton.h \
     buttons/numButton.h \
     buttons/opButton.h \
     buttons/unaryOpButton.h \

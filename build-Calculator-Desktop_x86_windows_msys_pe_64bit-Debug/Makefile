@@ -54,10 +54,17 @@ OBJECTS_DIR   = .
 SOURCES       = ..\Calculator\buttons\backspaceButton.cpp \
 		..\Calculator\buttons\binaryOpButton.cpp \
 		..\Calculator\buttons\calcButton.cpp \
+		..\Calculator\buttons\commaButton.cpp \
 		..\Calculator\buttons\equalButton.cpp \
+		..\Calculator\buttons\mcButton.cpp \
 		..\Calculator\buttons\numButton.cpp \
 		..\Calculator\buttons\opButton.cpp \
 		..\Calculator\buttons\unaryOpButton.cpp \
+		..\Calculator\exceptions\baseException.cpp \
+		..\Calculator\exceptions\invalidDoubleException.cpp \
+		..\Calculator\exceptions\syntaxErrorException.cpp \
+		..\Calculator\exceptions\undefinedNumberException.cpp \
+		..\Calculator\exceptions\unrealNumberException.cpp \
 		..\Calculator\expressions\divideExpression.cpp \
 		..\Calculator\expressions\sqrtExpression.cpp \
 		..\Calculator\widgets\buttonWidget.cpp \
@@ -67,7 +74,9 @@ SOURCES       = ..\Calculator\buttons\backspaceButton.cpp \
 		..\Calculator\mainwindow.cpp moc_backspaceButton.cpp \
 		moc_binaryOpButton.cpp \
 		moc_calcButton.cpp \
+		moc_commaButton.cpp \
 		moc_equalButton.cpp \
+		moc_mcButton.cpp \
 		moc_numButton.cpp \
 		moc_opButton.cpp \
 		moc_unaryOpButton.cpp \
@@ -78,10 +87,17 @@ SOURCES       = ..\Calculator\buttons\backspaceButton.cpp \
 OBJECTS       = backspaceButton.o \
 		binaryOpButton.o \
 		calcButton.o \
+		commaButton.o \
 		equalButton.o \
+		mcButton.o \
 		numButton.o \
 		opButton.o \
 		unaryOpButton.o \
+		baseException.o \
+		invalidDoubleException.o \
+		syntaxErrorException.o \
+		undefinedNumberException.o \
+		unrealNumberException.o \
 		divideExpression.o \
 		sqrtExpression.o \
 		buttonWidget.o \
@@ -92,7 +108,9 @@ OBJECTS       = backspaceButton.o \
 		moc_backspaceButton.o \
 		moc_binaryOpButton.o \
 		moc_calcButton.o \
+		moc_commaButton.o \
 		moc_equalButton.o \
+		moc_mcButton.o \
 		moc_numButton.o \
 		moc_opButton.o \
 		moc_unaryOpButton.o \
@@ -104,12 +122,16 @@ OBJECTS       = backspaceButton.o \
 DIST          =  ..\Calculator\buttons\backspaceButton.h \
 		..\Calculator\buttons\binaryOpButton.h \
 		..\Calculator\buttons\calcButton.h \
+		..\Calculator\buttons\commaButton.h \
 		..\Calculator\buttons\equalButton.h \
+		..\Calculator\buttons\mcButton.h \
 		..\Calculator\buttons\numButton.h \
 		..\Calculator\buttons\opButton.h \
 		..\Calculator\buttons\unaryOpButton.h \
 		..\Calculator\constants\constants.h \
 		..\Calculator\exceptions\baseException.h \
+		..\Calculator\exceptions\invalidDoubleException.h \
+		..\Calculator\exceptions\syntaxErrorException.h \
 		..\Calculator\exceptions\undefinedNumberException.h \
 		..\Calculator\exceptions\unrealNumberException.h \
 		..\Calculator\expressions\addExpression.h \
@@ -129,10 +151,17 @@ DIST          =  ..\Calculator\buttons\backspaceButton.h \
 		..\Calculator\mainwindow.h ..\Calculator\buttons\backspaceButton.cpp \
 		..\Calculator\buttons\binaryOpButton.cpp \
 		..\Calculator\buttons\calcButton.cpp \
+		..\Calculator\buttons\commaButton.cpp \
 		..\Calculator\buttons\equalButton.cpp \
+		..\Calculator\buttons\mcButton.cpp \
 		..\Calculator\buttons\numButton.cpp \
 		..\Calculator\buttons\opButton.cpp \
 		..\Calculator\buttons\unaryOpButton.cpp \
+		..\Calculator\exceptions\baseException.cpp \
+		..\Calculator\exceptions\invalidDoubleException.cpp \
+		..\Calculator\exceptions\syntaxErrorException.cpp \
+		..\Calculator\exceptions\undefinedNumberException.cpp \
+		..\Calculator\exceptions\unrealNumberException.cpp \
 		..\Calculator\expressions\divideExpression.cpp \
 		..\Calculator\expressions\sqrtExpression.cpp \
 		..\Calculator\widgets\buttonWidget.cpp \
@@ -570,10 +599,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) Calculator.zip $(SOURCES) $(DIST) ..\Calculator\Calculator.pro C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-desktop.conf C:\Qt\5.14.1\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.14.1\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\lex.prf ..\Calculator\Calculator.pro C:\Qt\5.14.1\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Core.prl C:\Qt\5.14.1\mingw73_64\lib\qtmain.prl    C:\Qt\5.14.1\mingw73_64\mkspecs\features\data\dummy.cpp ..\Calculator\buttons\backspaceButton.h ..\Calculator\buttons\binaryOpButton.h ..\Calculator\buttons\calcButton.h ..\Calculator\buttons\equalButton.h ..\Calculator\buttons\numButton.h ..\Calculator\buttons\opButton.h ..\Calculator\buttons\unaryOpButton.h ..\Calculator\constants\constants.h ..\Calculator\exceptions\baseException.h ..\Calculator\exceptions\undefinedNumberException.h ..\Calculator\exceptions\unrealNumberException.h ..\Calculator\expressions\addExpression.h ..\Calculator\expressions\binaryExpression.h ..\Calculator\expressions\divideExpression.h ..\Calculator\expressions\expression.h ..\Calculator\expressions\multiplyExpression.h ..\Calculator\expressions\negativeExpression.h ..\Calculator\expressions\sqrtExpression.h ..\Calculator\expressions\substractExpression.h ..\Calculator\expressions\terminalExpression.h ..\Calculator\expressions\unaryExpression.h ..\Calculator\parser.h ..\Calculator\widgets\buttonWidget.h ..\Calculator\widgets\mainWidget.h ..\Calculator\widgets\screenWidget.h ..\Calculator\mainwindow.h  ..\Calculator\buttons\backspaceButton.cpp ..\Calculator\buttons\binaryOpButton.cpp ..\Calculator\buttons\calcButton.cpp ..\Calculator\buttons\equalButton.cpp ..\Calculator\buttons\numButton.cpp ..\Calculator\buttons\opButton.cpp ..\Calculator\buttons\unaryOpButton.cpp ..\Calculator\expressions\divideExpression.cpp ..\Calculator\expressions\sqrtExpression.cpp ..\Calculator\widgets\buttonWidget.cpp ..\Calculator\widgets\mainWidget.cpp ..\Calculator\widgets\screenWidget.cpp ..\Calculator\main.cpp ..\Calculator\mainwindow.cpp     
+	$(ZIP) Calculator.zip $(SOURCES) $(DIST) ..\Calculator\Calculator.pro C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\qdevice.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\device_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\sanitize.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\gcc-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-base.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\angle.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\g++-win32.conf C:\Qt\5.14.1\mingw73_64\mkspecs\common\windows-desktop.conf C:\Qt\5.14.1\mingw73_64\mkspecs\qconfig.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bodymovin_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_charts.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_charts_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_datavisualization.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_datavisualization_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_networkauth.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_networkauth_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_purchasing.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_purchasing_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3d.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3d_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dassetimport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3drender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3drender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3druntimerender_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dutils.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick3dutils_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_script.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_script_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scripttools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scripttools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_virtualkeyboard_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.14.1\mingw73_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.14.1\mingw73_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.14.1\mingw73_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\toolchain.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\default_pre.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resolve_config.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\default_post.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qml_debug.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\precompile_header.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\warn_on.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qt.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources_functions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\resources.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\moc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\opengl.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\uic.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\qmake_use.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\file_copies.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\win32\windows.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\testcase_targets.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\exceptions.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\yacc.prf C:\Qt\5.14.1\mingw73_64\mkspecs\features\lex.prf ..\Calculator\Calculator.pro C:\Qt\5.14.1\mingw73_64\lib\Qt5Widgets.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Gui.prl C:\Qt\5.14.1\mingw73_64\lib\Qt5Core.prl C:\Qt\5.14.1\mingw73_64\lib\qtmain.prl    C:\Qt\5.14.1\mingw73_64\mkspecs\features\data\dummy.cpp ..\Calculator\buttons\backspaceButton.h ..\Calculator\buttons\binaryOpButton.h ..\Calculator\buttons\calcButton.h ..\Calculator\buttons\commaButton.h ..\Calculator\buttons\equalButton.h ..\Calculator\buttons\mcButton.h ..\Calculator\buttons\numButton.h ..\Calculator\buttons\opButton.h ..\Calculator\buttons\unaryOpButton.h ..\Calculator\constants\constants.h ..\Calculator\exceptions\baseException.h ..\Calculator\exceptions\invalidDoubleException.h ..\Calculator\exceptions\syntaxErrorException.h ..\Calculator\exceptions\undefinedNumberException.h ..\Calculator\exceptions\unrealNumberException.h ..\Calculator\expressions\addExpression.h ..\Calculator\expressions\binaryExpression.h ..\Calculator\expressions\divideExpression.h ..\Calculator\expressions\expression.h ..\Calculator\expressions\multiplyExpression.h ..\Calculator\expressions\negativeExpression.h ..\Calculator\expressions\sqrtExpression.h ..\Calculator\expressions\substractExpression.h ..\Calculator\expressions\terminalExpression.h ..\Calculator\expressions\unaryExpression.h ..\Calculator\parser.h ..\Calculator\widgets\buttonWidget.h ..\Calculator\widgets\mainWidget.h ..\Calculator\widgets\screenWidget.h ..\Calculator\mainwindow.h  ..\Calculator\buttons\backspaceButton.cpp ..\Calculator\buttons\binaryOpButton.cpp ..\Calculator\buttons\calcButton.cpp ..\Calculator\buttons\commaButton.cpp ..\Calculator\buttons\equalButton.cpp ..\Calculator\buttons\mcButton.cpp ..\Calculator\buttons\numButton.cpp ..\Calculator\buttons\opButton.cpp ..\Calculator\buttons\unaryOpButton.cpp ..\Calculator\exceptions\baseException.cpp ..\Calculator\exceptions\invalidDoubleException.cpp ..\Calculator\exceptions\syntaxErrorException.cpp ..\Calculator\exceptions\undefinedNumberException.cpp ..\Calculator\exceptions\unrealNumberException.cpp ..\Calculator\expressions\divideExpression.cpp ..\Calculator\expressions\sqrtExpression.cpp ..\Calculator\widgets\buttonWidget.cpp ..\Calculator\widgets\mainWidget.cpp ..\Calculator\widgets\screenWidget.cpp ..\Calculator\main.cpp ..\Calculator\mainwindow.cpp     
 
 clean: compiler_clean 
-	-$(DEL_FILE) backspaceButton.o binaryOpButton.o calcButton.o equalButton.o numButton.o opButton.o unaryOpButton.o divideExpression.o sqrtExpression.o buttonWidget.o mainWidget.o screenWidget.o main.o mainwindow.o moc_backspaceButton.o moc_binaryOpButton.o moc_calcButton.o moc_equalButton.o moc_numButton.o moc_opButton.o moc_unaryOpButton.o moc_buttonWidget.o moc_mainWidget.o moc_screenWidget.o moc_mainwindow.o
+	-$(DEL_FILE) backspaceButton.o binaryOpButton.o calcButton.o commaButton.o equalButton.o mcButton.o numButton.o opButton.o unaryOpButton.o baseException.o invalidDoubleException.o syntaxErrorException.o undefinedNumberException.o unrealNumberException.o divideExpression.o sqrtExpression.o buttonWidget.o mainWidget.o screenWidget.o main.o mainwindow.o moc_backspaceButton.o moc_binaryOpButton.o moc_calcButton.o moc_commaButton.o moc_equalButton.o moc_mcButton.o moc_numButton.o moc_opButton.o moc_unaryOpButton.o moc_buttonWidget.o moc_mainWidget.o moc_screenWidget.o moc_mainwindow.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -598,9 +627,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: C:/Qt/5.14.1/mingw73_64/mkspecs/features/data/dummy.cpp
 	g++ -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra -dM -E -o moc_predefs.h C:\Qt\5.14.1\mingw73_64\mkspecs\features\data\dummy.cpp
 
-compiler_moc_header_make_all: moc_backspaceButton.cpp moc_binaryOpButton.cpp moc_calcButton.cpp moc_equalButton.cpp moc_numButton.cpp moc_opButton.cpp moc_unaryOpButton.cpp moc_buttonWidget.cpp moc_mainWidget.cpp moc_screenWidget.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_backspaceButton.cpp moc_binaryOpButton.cpp moc_calcButton.cpp moc_commaButton.cpp moc_equalButton.cpp moc_mcButton.cpp moc_numButton.cpp moc_opButton.cpp moc_unaryOpButton.cpp moc_buttonWidget.cpp moc_mainWidget.cpp moc_screenWidget.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_backspaceButton.cpp moc_binaryOpButton.cpp moc_calcButton.cpp moc_equalButton.cpp moc_numButton.cpp moc_opButton.cpp moc_unaryOpButton.cpp moc_buttonWidget.cpp moc_mainWidget.cpp moc_screenWidget.cpp moc_mainwindow.cpp
+	-$(DEL_FILE) moc_backspaceButton.cpp moc_binaryOpButton.cpp moc_calcButton.cpp moc_commaButton.cpp moc_equalButton.cpp moc_mcButton.cpp moc_numButton.cpp moc_opButton.cpp moc_unaryOpButton.cpp moc_buttonWidget.cpp moc_mainWidget.cpp moc_screenWidget.cpp moc_mainwindow.cpp
 moc_backspaceButton.cpp: ../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
@@ -940,6 +969,119 @@ moc_calcButton.cpp: ../Calculator/buttons/calcButton.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\buttons\calcButton.h -o moc_calcButton.cpp
 
+moc_commaButton.cpp: ../Calculator/buttons/commaButton.h \
+		../Calculator/buttons/calcButton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtgui-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsize.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiterator.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpair.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpoint.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qregexp.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcolor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgb.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgba64.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qimage.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixelformat.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtransform.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qmatrix.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdatastream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qline.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainterpath.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpalette.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qbrush.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcursor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfile.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		moc_predefs.h \
+		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\buttons\commaButton.h -o moc_commaButton.cpp
+
 moc_equalButton.cpp: ../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/calcButton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
@@ -1052,6 +1194,119 @@ moc_equalButton.cpp: ../Calculator/buttons/equalButton.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\buttons\equalButton.h -o moc_equalButton.cpp
+
+moc_mcButton.cpp: ../Calculator/buttons/mcButton.h \
+		../Calculator/buttons/calcButton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtgui-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsize.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiterator.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpair.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpoint.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qregexp.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcolor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgb.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgba64.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qimage.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixelformat.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtransform.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qmatrix.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdatastream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qline.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainterpath.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpalette.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qbrush.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcursor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfile.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h \
+		moc_predefs.h \
+		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
+	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\buttons\mcButton.h -o moc_mcButton.cpp
 
 moc_numButton.cpp: ../Calculator/buttons/numButton.h \
 		../Calculator/buttons/calcButton.h \
@@ -1511,9 +1766,11 @@ moc_buttonWidget.cpp: ../Calculator/widgets/buttonWidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
 		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h \
 		../Calculator/constants/constants.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
@@ -1639,6 +1896,25 @@ moc_mainWidget.cpp: ../Calculator/widgets/mainWidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
@@ -1648,9 +1924,11 @@ moc_mainWidget.cpp: ../Calculator/widgets/mainWidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
 		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\widgets\mainWidget.h -o moc_mainWidget.cpp
@@ -1774,6 +2052,25 @@ moc_screenWidget.cpp: ../Calculator/widgets/screenWidget.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\widgets\screenWidget.h -o moc_screenWidget.cpp
@@ -1916,14 +2213,35 @@ moc_mainwindow.cpp: ../Calculator/mainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
 		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h \
 		moc_predefs.h \
 		C:/Qt/5.14.1/mingw73_64/bin/moc.exe
 	C:\Qt\5.14.1\mingw73_64\bin\moc.exe $(DEFINES) --include "C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/build-Calculator-Desktop_x86_windows_msys_pe_64bit-Debug/moc_predefs.h" -IC:/Qt/5.14.1/mingw73_64/mkspecs/win32-g++ -I"C:/Users/mdaffad/Desktop/Tubes OOP/Tubes-1-OOP/Calculator" -IC:/Qt/5.14.1/mingw73_64/include -IC:/Qt/5.14.1/mingw73_64/include/QtWidgets -IC:/Qt/5.14.1/mingw73_64/include/QtGui -IC:/Qt/5.14.1/mingw73_64/include/QtANGLE -IC:/Qt/5.14.1/mingw73_64/include/QtCore -I. -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed" -I"C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/x86_64-w64-mingw32/include" ..\Calculator\mainwindow.h -o moc_mainwindow.cpp
@@ -2279,6 +2597,117 @@ calcButton.o: ../Calculator/buttons/calcButton.cpp ../Calculator/buttons/calcBut
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o calcButton.o ..\Calculator\buttons\calcButton.cpp
 
+commaButton.o: ../Calculator/buttons/commaButton.cpp ../Calculator/buttons/commaButton.h \
+		../Calculator/buttons/calcButton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtgui-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsize.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiterator.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpair.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpoint.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qregexp.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcolor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgb.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgba64.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qimage.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixelformat.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtransform.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qmatrix.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdatastream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qline.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainterpath.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpalette.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qbrush.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcursor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfile.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o commaButton.o ..\Calculator\buttons\commaButton.cpp
+
 equalButton.o: ../Calculator/buttons/equalButton.cpp ../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/calcButton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
@@ -2389,6 +2818,117 @@ equalButton.o: ../Calculator/buttons/equalButton.cpp ../Calculator/buttons/equal
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o equalButton.o ..\Calculator\buttons\equalButton.cpp
+
+mcButton.o: ../Calculator/buttons/mcButton.cpp ../Calculator/buttons/mcButton.h \
+		../Calculator/buttons/calcButton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QPushButton \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgetsglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtguiglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtgui-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qtwidgets-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsize.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmargins.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiterator.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpair.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvector.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qpoint.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qregexp.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpaintdevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qwindowdefs_win.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrect.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcolor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgb.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qrgba64.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qhash.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qimage.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpixelformat.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtransform.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qmatrix.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpolygon.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qregion.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdatastream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qline.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpainterpath.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qkeysequence.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qwidget.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpalette.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qbrush.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfont.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontmetrics.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qfontinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qsizepolicy.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qcursor.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qevent.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qvariant.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qdebug.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlocale.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qset.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurl.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qurlquery.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfile.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qfiledevice.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qvector2d.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mcButton.o ..\Calculator\buttons\mcButton.cpp
 
 numButton.o: ../Calculator/buttons/numButton.cpp ../Calculator/buttons/numButton.h \
 		../Calculator/buttons/calcButton.h \
@@ -2724,14 +3264,262 @@ unaryOpButton.o: ../Calculator/buttons/unaryOpButton.cpp ../Calculator/buttons/u
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtouchdevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unaryOpButton.o ..\Calculator\buttons\unaryOpButton.cpp
 
+baseException.o: ../Calculator/exceptions/baseException.cpp ../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o baseException.o ..\Calculator\exceptions\baseException.cpp
+
+invalidDoubleException.o: ../Calculator/exceptions/invalidDoubleException.cpp ../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o invalidDoubleException.o ..\Calculator\exceptions\invalidDoubleException.cpp
+
+syntaxErrorException.o: ../Calculator/exceptions/syntaxErrorException.cpp ../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o syntaxErrorException.o ..\Calculator\exceptions\syntaxErrorException.cpp
+
+undefinedNumberException.o: ../Calculator/exceptions/undefinedNumberException.cpp ../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o undefinedNumberException.o ..\Calculator\exceptions\undefinedNumberException.cpp
+
+unrealNumberException.o: ../Calculator/exceptions/unrealNumberException.cpp ../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o unrealNumberException.o ..\Calculator\exceptions\unrealNumberException.cpp
+
 divideExpression.o: ../Calculator/expressions/divideExpression.cpp ../Calculator/expressions/divideExpression.h \
 		../Calculator/expressions/binaryExpression.h \
-		../Calculator/expressions/expression.h
+		../Calculator/expressions/expression.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o divideExpression.o ..\Calculator\expressions\divideExpression.cpp
 
 sqrtExpression.o: ../Calculator/expressions/sqrtExpression.cpp ../Calculator/expressions/sqrtExpression.h \
 		../Calculator/expressions/unaryExpression.h \
-		../Calculator/expressions/expression.h
+		../Calculator/expressions/expression.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/baseException.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstring.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qchar.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobal.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qconfig.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qlogging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qflags.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qmutex.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringview.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/qstringbuilder.h \
+		../Calculator/exceptions/unrealNumberException.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sqrtExpression.o ..\Calculator\expressions\sqrtExpression.cpp
 
 buttonWidget.o: ../Calculator/widgets/buttonWidget.cpp ../Calculator/widgets/buttonWidget.h \
@@ -2852,9 +3640,11 @@ buttonWidget.o: ../Calculator/widgets/buttonWidget.cpp ../Calculator/widgets/but
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
 		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h \
 		../Calculator/constants/constants.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o buttonWidget.o ..\Calculator\widgets\buttonWidget.cpp
 
@@ -2978,6 +3768,25 @@ mainWidget.o: ../Calculator/widgets/mainWidget.cpp ../Calculator/widgets/mainWid
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
@@ -2987,9 +3796,11 @@ mainWidget.o: ../Calculator/widgets/mainWidget.cpp ../Calculator/widgets/mainWid
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qicon.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
-		../Calculator/buttons/unaryOpButton.h
+		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainWidget.o ..\Calculator\widgets\mainWidget.cpp
 
 screenWidget.o: ../Calculator/widgets/screenWidget.cpp ../Calculator/widgets/screenWidget.h \
@@ -3110,7 +3921,26 @@ screenWidget.o: ../Calculator/widgets/screenWidget.cpp ../Calculator/widgets/scr
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qpen.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/qtextoption.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
-		../Calculator/constants/constants.h
+		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o screenWidget.o ..\Calculator\widgets\screenWidget.cpp
 
 main.o: ../Calculator/main.cpp ../Calculator/mainwindow.h \
@@ -3251,14 +4081,35 @@ main.o: ../Calculator/main.cpp ../Calculator/mainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
 		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/QApplication \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qapplication.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtCore/qcoreapplication.h \
@@ -3406,14 +4257,35 @@ mainwindow.o: ../Calculator/mainwindow.cpp ../Calculator/mainwindow.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.14.1/mingw73_64/include/QtGui/QFont \
 		../Calculator/constants/constants.h \
+		../Calculator/parser.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QString \
+		../Calculator/exceptions/baseException.h \
+		../Calculator/exceptions/undefinedNumberException.h \
+		../Calculator/exceptions/unrealNumberException.h \
+		../Calculator/exceptions/syntaxErrorException.h \
+		../Calculator/exceptions/invalidDoubleException.h \
+		../Calculator/expressions/expression.h \
+		../Calculator/expressions/terminalExpression.h \
+		../Calculator/expressions/binaryExpression.h \
+		../Calculator/expressions/unaryExpression.h \
+		../Calculator/expressions/addExpression.h \
+		../Calculator/expressions/divideExpression.h \
+		../Calculator/expressions/multiplyExpression.h \
+		../Calculator/expressions/substractExpression.h \
+		../Calculator/expressions/sqrtExpression.h \
+		../Calculator/expressions/negativeExpression.h \
+		../Calculator/expressions/absoluteExpression.h \
+		C:/Qt/5.14.1/mingw73_64/include/QtCore/QtDebug \
 		../Calculator/widgets/buttonWidget.h \
 		../Calculator/buttons/backspaceButton.h \
 		../Calculator/buttons/calcButton.h \
 		../Calculator/buttons/binaryOpButton.h \
 		../Calculator/buttons/opButton.h \
+		../Calculator/buttons/commaButton.h \
 		../Calculator/buttons/equalButton.h \
 		../Calculator/buttons/numButton.h \
-		../Calculator/buttons/unaryOpButton.h
+		../Calculator/buttons/unaryOpButton.h \
+		../Calculator/buttons/mcButton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ..\Calculator\mainwindow.cpp
 
 moc_backspaceButton.o: moc_backspaceButton.cpp 
@@ -3425,8 +4297,14 @@ moc_binaryOpButton.o: moc_binaryOpButton.cpp
 moc_calcButton.o: moc_calcButton.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_calcButton.o moc_calcButton.cpp
 
+moc_commaButton.o: moc_commaButton.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_commaButton.o moc_commaButton.cpp
+
 moc_equalButton.o: moc_equalButton.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_equalButton.o moc_equalButton.cpp
+
+moc_mcButton.o: moc_mcButton.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mcButton.o moc_mcButton.cpp
 
 moc_numButton.o: moc_numButton.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_numButton.o moc_numButton.cpp

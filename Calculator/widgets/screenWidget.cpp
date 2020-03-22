@@ -1,6 +1,7 @@
 #include "screenWidget.h"
 #include <QtDebug>
-
+#include <queue>
+using namespace std;
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
     this->isAns = true;
@@ -87,5 +88,38 @@ void ScreenWidget::handleUnaryOpClick(QString type) {
         isAns = false;
     } else {
         screen->setText(screen->text().append(type));
+    }
+}
+
+void ScreenWidget::handleMCClick() {
+//    qDebug() << "tests";
+    static queue <QString> MC;
+    bool needDouble = false; int idx = 0;
+    this->isAns = true;
+    try {
+        while (idx < screen->text().length() && !needDouble) {
+            if (screen->text()[idx] == BIN_OP_DIV || screen->text()[idx] == UN_OP_SQRT || screen->text()[idx] == COMMA)
+                needDouble = true;
+            idx++;
+        }
+
+        if (needDouble) {
+            double result = -1;
+            Parser::parser(screen->text(), result, 3);
+            MC.push(QString::number(result));
+            this->lastAns = result;
+        } else { // long
+            long result = -1;
+            Parser::parser(screen->text(), result);
+            MC.push(QString::number(result));
+            auto a = MC.front();
+            screen->setText(a);
+            MC.pop();
+            this->lastAns = (double) result;
+        }
+    } catch (BaseException * err) {
+        screen->setText(err->getMessage());
+    } catch (...) {
+        screen->setText("Some error encountered");
     }
 }

@@ -26,6 +26,10 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     btnEq = new EqualButton();
     connect(btnEq, SIGNAL(equalClicked()), this, SLOT(handleEqualClick()));
 
+    // Create & Connect MC button
+    btnMC = new MCButton();
+    connect(btnMC, SIGNAL(mcClicked()), this, SLOT(handleMCClick()));
+
     // Create num button
     btn1 = new NumButton(1);
     btn2 = new NumButton(2);
@@ -69,6 +73,7 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btnComma, 5, 2);
 
     mainLayout->addWidget(btnEq, 5, 3);
+    mainLayout->addWidget(btnMC,0,0);
 
     mainLayout->addWidget(btn1, 2, 0);
     mainLayout->addWidget(btn2, 2, 1);
@@ -108,4 +113,8 @@ void ButtonWidget::handleNumClick(int value) {
 
 void ButtonWidget::handleUnaryOpClick(QString type) {
     emit unaryOpClicked(type);
+}
+
+void ButtonWidget::handleMCClick() {
+    emit mcClicked();
 }

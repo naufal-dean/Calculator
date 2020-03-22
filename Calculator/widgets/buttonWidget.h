@@ -9,6 +9,7 @@
 #include "../buttons/equalButton.h"
 #include "../buttons/numButton.h"
 #include "../buttons/unaryOpButton.h"
+#include "../buttons/mcButton.h"
 #include "../constants/constants.h"
 
 class ButtonWidget : public QWidget
@@ -22,6 +23,7 @@ private:
     EqualButton *btnEq;
     NumButton *btn0, *btn1, *btn2, *btn3, *btn4, *btn5, *btn6, *btn7, *btn8, *btn9;
     UnaryOpButton *btnSqrt;
+    MCButton *btnMC;
 public:
     ButtonWidget(QWidget *parent = nullptr);
 signals:
@@ -31,6 +33,7 @@ signals:
     void equalClicked();
     void numClicked(int value);
     void unaryOpClicked(QString type);
+    void mcClicked();
 private slots:
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
@@ -38,6 +41,7 @@ private slots:
     void handleEqualClick();
     void handleNumClick(int value);
     void handleUnaryOpClick(QString type);
+    void handleMCClick();
 };
 
 #endif // BUTTONWIDGET_H

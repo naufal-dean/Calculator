@@ -25,6 +25,7 @@ private slots:
     void handleEqualClick();
     void handleNumClick(int value);
     void handleUnaryOpClick(QString type);
+    void handleMCClick();
 };
 
 #endif // SCREENWIDGET_H

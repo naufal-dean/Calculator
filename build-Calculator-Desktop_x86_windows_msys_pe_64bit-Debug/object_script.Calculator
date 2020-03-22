@@ -1,10 +1,17 @@
 backspaceButton.o
 binaryOpButton.o
 calcButton.o
+commaButton.o
 equalButton.o
+mcButton.o
 numButton.o
 opButton.o
 unaryOpButton.o
+baseException.o
+invalidDoubleException.o
+syntaxErrorException.o
+undefinedNumberException.o
+unrealNumberException.o
 divideExpression.o
 sqrtExpression.o
 buttonWidget.o
@@ -15,7 +22,9 @@ mainwindow.o
 moc_backspaceButton.o
 moc_binaryOpButton.o
 moc_calcButton.o
+moc_commaButton.o
 moc_equalButton.o
+moc_mcButton.o
 moc_numButton.o
 moc_opButton.o
 moc_unaryOpButton.o
