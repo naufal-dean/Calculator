@@ -94,8 +94,6 @@ void ScreenWidget::handleUnaryOpClick(QString type) {
 }
 
 void ScreenWidget::handleMCClick() {
-//    qDebug() << "tests";
-
     bool needDouble = false; int idx = 0;
     this->isAns = true;
     try {
@@ -124,9 +122,12 @@ void ScreenWidget::handleMCClick() {
 }
 
 void ScreenWidget::handleMRClick() {
-
-    screen->setText(screen->text().append(ScreenWidget::MC.front()));
-    ScreenWidget::MC.pop();
+    if (ScreenWidget::MC.size() == 0) {
+        screen->setText("MR empty");
+    } else {
+        screen->setText(screen->text().append(ScreenWidget::MC.front()));
+        ScreenWidget::MC.pop();
+    }
 }
 
 void ScreenWidget::handleACClick() {
