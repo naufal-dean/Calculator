@@ -1,11 +1,13 @@
 debug/backspaceButton.o
 debug/binaryOpButton.o
 debug/calcButton.o
+debug/commaButton.o
 debug/equalButton.o
 debug/numButton.o
 debug/opButton.o
 debug/unaryOpButton.o
 debug/baseException.o
+debug/invalidDoubleException.o
 debug/syntaxErrorException.o
 debug/undefinedNumberException.o
 debug/unrealNumberException.o
@@ -19,6 +21,7 @@ debug/mainwindow.o
 debug/moc_backspaceButton.o
 debug/moc_binaryOpButton.o
 debug/moc_calcButton.o
+debug/moc_commaButton.o
 debug/moc_equalButton.o
 debug/moc_numButton.o
 debug/moc_opButton.o

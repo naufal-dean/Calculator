@@ -19,11 +19,13 @@ SOURCES += \
     buttons/backspaceButton.cpp \
     buttons/binaryOpButton.cpp \
     buttons/calcButton.cpp \
+    buttons/commaButton.cpp \
     buttons/equalButton.cpp \
     buttons/numButton.cpp \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
     exceptions/baseException.cpp \
+    exceptions/invalidDoubleException.cpp \
     exceptions/syntaxErrorException.cpp \
     exceptions/undefinedNumberException.cpp \
     exceptions/unrealNumberException.cpp \
@@ -39,12 +41,14 @@ HEADERS += \
     buttons/backspaceButton.h \
     buttons/binaryOpButton.h \
     buttons/calcButton.h \
+    buttons/commaButton.h \
     buttons/equalButton.h \
     buttons/numButton.h \
     buttons/opButton.h \
     buttons/unaryOpButton.h \
     constants/constants.h \
     exceptions/baseException.h \
+    exceptions/invalidDoubleException.h \
     exceptions/syntaxErrorException.h \
     exceptions/undefinedNumberException.h \
     exceptions/unrealNumberException.h \

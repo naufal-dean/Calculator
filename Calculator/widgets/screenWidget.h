@@ -21,6 +21,7 @@ public:
 private slots:
     void handleBackspaceClick();
     void handleBinaryOpClick(QString type);
+    void handleCommaClick();
     void handleEqualClick();
     void handleNumClick(int value);
     void handleUnaryOpClick(QString type);

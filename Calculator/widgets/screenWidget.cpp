@@ -39,6 +39,10 @@ void ScreenWidget::handleBinaryOpClick(QString type) {
     screen->setText(screen->text().append(type));
 }
 
+void ScreenWidget::handleCommaClick() {
+    screen->setText(screen->text().append(COMMA));
+}
+
 void ScreenWidget::handleEqualClick() {
 //    qDebug() << "tests";
     bool needDouble = false; int idx = 0;

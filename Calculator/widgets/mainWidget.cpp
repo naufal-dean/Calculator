@@ -5,6 +5,7 @@ MainWidget::MainWidget(QWidget *parent) : QWidget(parent), screenWidget(new Scre
     // Connect button and screen
     connect(buttonWidget, SIGNAL(backspaceClicked()), screenWidget, SLOT(handleBackspaceClick()));
     connect(buttonWidget, SIGNAL(binaryOpClicked(QString)), screenWidget, SLOT(handleBinaryOpClick(QString)));
+    connect(buttonWidget, SIGNAL(commaClicked()), screenWidget, SLOT(handleCommaClick()));
     connect(buttonWidget, SIGNAL(equalClicked()), screenWidget, SLOT(handleEqualClick()));
     connect(buttonWidget, SIGNAL(numClicked(int)), screenWidget, SLOT(handleNumClick(int)));
     connect(buttonWidget, SIGNAL(unaryOpClicked(QString)), screenWidget, SLOT(handleUnaryOpClick(QString)));

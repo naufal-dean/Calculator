@@ -16,7 +16,11 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     connect(btnAdd, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
     connect(btnSub, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
     connect(btnMul, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
-    connect(btnDiv, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));
+    connect(btnDiv, SIGNAL(binaryOpClicked(QString)), this, SLOT(handleBinaryOpClick(QString)));    
+
+    // Create & Connect comma button
+    btnComma = new CommaButton();
+    connect(btnComma, SIGNAL(commaClicked()), this, SLOT(handleCommaClick()));
 
     // Create & Connect equal button
     btnEq = new EqualButton();
@@ -62,6 +66,8 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     mainLayout->addWidget(btnSub, 3, 3);
     mainLayout->addWidget(btnAdd, 4, 3);
 
+    mainLayout->addWidget(btnComma, 5, 2);
+
     mainLayout->addWidget(btnEq, 5, 3);
 
     mainLayout->addWidget(btn1, 2, 0);
@@ -86,6 +92,10 @@ void ButtonWidget::handleBackspaceClick() {
 
 void ButtonWidget::handleBinaryOpClick(QString type) {
     emit binaryOpClicked(type);
+}
+
+void ButtonWidget::handleCommaClick() {
+    emit commaClicked();
 }
 
 void ButtonWidget::handleEqualClick() {

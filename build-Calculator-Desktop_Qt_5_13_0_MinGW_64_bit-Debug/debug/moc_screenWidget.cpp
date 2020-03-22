@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ScreenWidget_t {
-    QByteArrayData data[9];
-    char stringdata0[117];
+    QByteArrayData data[10];
+    char stringdata0[134];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,15 +37,17 @@ QT_MOC_LITERAL(1, 13, 20), // "handleBackspaceClick"
 QT_MOC_LITERAL(2, 34, 0), // ""
 QT_MOC_LITERAL(3, 35, 19), // "handleBinaryOpClick"
 QT_MOC_LITERAL(4, 55, 4), // "type"
-QT_MOC_LITERAL(5, 60, 16), // "handleEqualClick"
-QT_MOC_LITERAL(6, 77, 14), // "handleNumClick"
-QT_MOC_LITERAL(7, 92, 5), // "value"
-QT_MOC_LITERAL(8, 98, 18) // "handleUnaryOpClick"
+QT_MOC_LITERAL(5, 60, 16), // "handleCommaClick"
+QT_MOC_LITERAL(6, 77, 16), // "handleEqualClick"
+QT_MOC_LITERAL(7, 94, 14), // "handleNumClick"
+QT_MOC_LITERAL(8, 109, 5), // "value"
+QT_MOC_LITERAL(9, 115, 18) // "handleUnaryOpClick"
 
     },
     "ScreenWidget\0handleBackspaceClick\0\0"
-    "handleBinaryOpClick\0type\0handleEqualClick\0"
-    "handleNumClick\0value\0handleUnaryOpClick"
+    "handleBinaryOpClick\0type\0handleCommaClick\0"
+    "handleEqualClick\0handleNumClick\0value\0"
+    "handleUnaryOpClick"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,7 +57,7 @@ static const uint qt_meta_data_ScreenWidget[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -63,17 +65,19 @@ static const uint qt_meta_data_ScreenWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x08 /* Private */,
-       3,    1,   40,    2, 0x08 /* Private */,
-       5,    0,   43,    2, 0x08 /* Private */,
-       6,    1,   44,    2, 0x08 /* Private */,
-       8,    1,   47,    2, 0x08 /* Private */,
+       1,    0,   44,    2, 0x08 /* Private */,
+       3,    1,   45,    2, 0x08 /* Private */,
+       5,    0,   48,    2, 0x08 /* Private */,
+       6,    0,   49,    2, 0x08 /* Private */,
+       7,    1,   50,    2, 0x08 /* Private */,
+       9,    1,   53,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    4,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::QString,    4,
 
        0        // eod
@@ -87,9 +91,10 @@ void ScreenWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->handleBackspaceClick(); break;
         case 1: _t->handleBinaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->handleEqualClick(); break;
-        case 3: _t->handleNumClick((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 4: _t->handleUnaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 2: _t->handleCommaClick(); break;
+        case 3: _t->handleEqualClick(); break;
+        case 4: _t->handleNumClick((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->handleUnaryOpClick((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -124,13 +129,13 @@ int ScreenWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

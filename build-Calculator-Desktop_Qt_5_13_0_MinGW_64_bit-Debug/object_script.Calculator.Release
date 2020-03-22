@@ -1,11 +1,13 @@
 release/backspaceButton.o
 release/binaryOpButton.o
 release/calcButton.o
+release/commaButton.o
 release/equalButton.o
 release/numButton.o
 release/opButton.o
 release/unaryOpButton.o
 release/baseException.o
+release/invalidDoubleException.o
 release/syntaxErrorException.o
 release/undefinedNumberException.o
 release/unrealNumberException.o
@@ -19,6 +21,7 @@ release/mainwindow.o
 release/moc_backspaceButton.o
 release/moc_binaryOpButton.o
 release/moc_calcButton.o
+release/moc_commaButton.o
 release/moc_equalButton.o
 release/moc_numButton.o
 release/moc_opButton.o
