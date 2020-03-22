@@ -23,7 +23,7 @@ void ScreenWidget::handleBackspaceClick() {
     int textLen = screen->text().length();
     if (textLen == 1) {
         screen->setText("0");
-        isAns = true;
+        this->isAns = true;
     } else {
         screen->setText(screen->text().mid(0, textLen - 1));
     }
@@ -31,6 +31,7 @@ void ScreenWidget::handleBackspaceClick() {
 
 void ScreenWidget::handleBinaryOpClick(QString type) {
     int textLen = screen->text().length();
+    this->isAns = false;
     QChar lastChar = screen->text().data()[textLen - 1];
     if (lastChar == BIN_OP_ADD || lastChar == BIN_OP_SUB || lastChar == BIN_OP_MUL || lastChar == BIN_OP_DIV) {
         screen->setText(screen->text().mid(0, textLen - 1));

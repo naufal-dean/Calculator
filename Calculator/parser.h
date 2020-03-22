@@ -56,19 +56,10 @@ public:
         if (!(input[input.length() - 1].isDigit()))
             throw new SyntaxErrorException();
 
-        int idx = 0; bool isMinusFirst = false;
-        // Check minus in front
-        if (input[0] == UN_OP_MIN) {
-            isMinusFirst = true;
-            idx = operatorFinder(input, 1);
-        } else {
-            idx = operatorFinder(input);
-        }
+        int idx = 0;
         // Only number
         if (idx == input.length()) {
             result = input.toLong();
-            if (isMinusFirst)
-                result *= -1;
             return;
         }
 
@@ -76,10 +67,7 @@ public:
         int precIdx = 0;
 
         // Build first expression
-        Expression<long> *temp;
-        temp = new TerminalExpression<long>(input.mid(precIdx, idx - precIdx).toLong());
-        if (isMinusFirst)
-            temp = new NegativeExpression<long>(temp);
+        Expression<long> *temp = new TerminalExpression<long>(input.mid(precIdx, idx - precIdx).toLong());
 
         // Build next expression
         while (idx != input.length()) {
