@@ -44,7 +44,7 @@ void ScreenWidget::handleCommaClick() {
 }
 
 void ScreenWidget::handleEqualClick() {
-//    qDebug() << "tests";
+//    qDebug() << "test";
     bool needDouble = false; int idx = 0;
     this->isAns = true;
     try {

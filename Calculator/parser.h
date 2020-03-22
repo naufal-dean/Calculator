@@ -41,15 +41,29 @@ private:
 
     static int operatorFinder(QString input) {
         int idx = 0;
-        while (idx < input.length() && !isBinaryOp(input[idx])) {
-            idx++;
+        while (idx < input.length() &&
+               (!isBinaryOp(input[idx]) || input[idx] == UN_OP_MIN)) {
+            if (input[idx] == UN_OP_MIN) {
+                if (idx == 0) {
+                    idx++;
+                } else { // idx > 0
+                    if (!input[idx - 1].isDigit()) {
+                        idx++;
+                    } else {
+                        return idx;
+                    }
+                }
+            } else {
+                idx++;
+            }
         }
         return idx;
     }
 
     static int operatorFinder(QString input, int startIdx) {
         int idx = startIdx;
-        while (idx < input.length() && !isBinaryOp(input[idx])) {
+        while (idx < input.length() &&
+               (!isBinaryOp(input[idx]) || (input[idx] == UN_OP_MIN) && !input[idx - 1].isDigit())) {
             idx++;
         }
         return idx;
@@ -100,8 +114,22 @@ public:
         int idx = operatorFinder(input);
         // Only number
         if (idx == input.length()) {
-            result = (int) (input.toDouble() * pow(10, roundedTo) + .5);
-            result = (double) result / pow(10, roundedTo);
+            if (input[0] == UN_OP_SQRT) {
+                // Count sqrt
+                int sqrtCount = 0;
+                while (input[sqrtCount] == UN_OP_SQRT)
+                    sqrtCount++;
+                // Build expression
+                qDebug() << "parser " << input.mid(sqrtCount).toDouble();
+                Expression<double> *expr = new TerminalExpression<double>(input.mid(sqrtCount).toDouble());
+                for (int i = 0; i < sqrtCount; i++)
+                    expr = new SqrtExpression(expr);
+                result = (int) (expr->solve() * pow(10, roundedTo) + .5);
+                result = (double) result / pow(10, roundedTo);
+            } else {
+                result = (int) (input.toDouble() * pow(10, roundedTo) + .5);
+                result = (double) result / pow(10, roundedTo);
+            }
             return;
         }
 
@@ -115,6 +143,7 @@ public:
         while (idx != input.length()) {
             precIdx = idx + 1;
             idx = operatorFinder(input, idx + 1);
+
             QString numString = input.mid(precIdx, idx - precIdx);
             // Check double validity and wether any unary operator between digits
             int i = 0, commaCount = 0; bool digitFound = false;
@@ -133,13 +162,21 @@ public:
                     digitFound = true;
                 i++;
             }
-            // Build new expression
+
+            // Build new terminal or unary expression
             Expression<double> *newExpr;
             if (numString[0].isDigit()) {
                 newExpr = new TerminalExpression<double>(numString.toDouble());
             } else {
                 if (numString[0] == UN_OP_SQRT) {
-                    newExpr = new SqrtExpression(new TerminalExpression<double>(numString.mid(1).toDouble()));
+                    // Count sqrt
+                    int sqrtCount = 0;
+                    while (numString[sqrtCount] == UN_OP_SQRT)
+                        sqrtCount++;
+                    // Build expression
+                    newExpr = new TerminalExpression<double>(numString.mid(sqrtCount).toDouble());
+                    for (int i = 0; i < sqrtCount; i++)
+                        newExpr = new SqrtExpression(newExpr);
                 }
             }
 
