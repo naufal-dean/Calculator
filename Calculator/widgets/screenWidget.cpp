@@ -2,6 +2,8 @@
 #include <QtDebug>
 #include <queue>
 using namespace std;
+queue<QString> ScreenWidget::MC;
+
 ScreenWidget::ScreenWidget(QWidget *parent) : QWidget(parent)
 {
     this->isAns = true;
@@ -93,7 +95,7 @@ void ScreenWidget::handleUnaryOpClick(QString type) {
 
 void ScreenWidget::handleMCClick() {
 //    qDebug() << "tests";
-    static queue <QString> MC;
+
     bool needDouble = false; int idx = 0;
     this->isAns = true;
     try {
@@ -106,15 +108,12 @@ void ScreenWidget::handleMCClick() {
         if (needDouble) {
             double result = -1;
             Parser::parser(screen->text(), result, 3);
-            MC.push(QString::number(result));
+            ScreenWidget::MC.push(QString::number(result));
             this->lastAns = result;
         } else { // long
             long result = -1;
             Parser::parser(screen->text(), result);
-            MC.push(QString::number(result));
-            auto a = MC.front();
-            screen->setText(a);
-            MC.pop();
+            ScreenWidget::MC.push(QString::number(result));
             this->lastAns = (double) result;
         }
     } catch (BaseException * err) {
@@ -123,3 +122,18 @@ void ScreenWidget::handleMCClick() {
         screen->setText("Some error encountered");
     }
 }
+
+void ScreenWidget::handleMRClick() {
+
+    screen->setText(screen->text().append(ScreenWidget::MC.front()));
+    ScreenWidget::MC.pop();
+}
+
+void ScreenWidget::handleACClick() {
+    while(ScreenWidget::MC.empty() != true)
+    {
+        ScreenWidget::MC.pop();
+    }
+    screen->setText("");
+}
+

@@ -7,6 +7,8 @@
 #include <QFont>
 #include "../constants/constants.h"
 #include "../parser.h"
+#include <queue>
+using namespace std;
 
 class ScreenWidget : public QWidget
 {
@@ -16,6 +18,7 @@ private:
     QLineEdit *screen;
     bool isAns;
     double lastAns;
+    static queue <QString> MC;
 public:
     ScreenWidget(QWidget *parent = nullptr);
 private slots:
@@ -26,6 +29,8 @@ private slots:
     void handleNumClick(int value);
     void handleUnaryOpClick(QString type);
     void handleMCClick();
+    void handleMRClick();
+    void handleACClick();
 };
 
 #endif // SCREENWIDGET_H

@@ -30,6 +30,14 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
     btnMC = new MCButton();
     connect(btnMC, SIGNAL(mcClicked()), this, SLOT(handleMCClick()));
 
+    // Create & Connect MR button
+    btnMR = new MRButton();
+    connect(btnMR, SIGNAL(mrClicked()), this, SLOT(handleMRClick()));
+
+    // Create & Connect AC button
+    btnAC = new ACButton();
+    connect(btnAC, SIGNAL(acClicked()), this, SLOT(handleACClick()));
+
     // Create num button
     btn1 = new NumButton(1);
     btn2 = new NumButton(2);
@@ -74,6 +82,8 @@ ButtonWidget::ButtonWidget(QWidget *parent) : QWidget(parent)
 
     mainLayout->addWidget(btnEq, 5, 3);
     mainLayout->addWidget(btnMC,0,0);
+    mainLayout->addWidget(btnMR,0,1);
+    mainLayout->addWidget(btnAC,0,2);
 
     mainLayout->addWidget(btn1, 2, 0);
     mainLayout->addWidget(btn2, 2, 1);
@@ -117,4 +127,12 @@ void ButtonWidget::handleUnaryOpClick(QString type) {
 
 void ButtonWidget::handleMCClick() {
     emit mcClicked();
+}
+
+void ButtonWidget::handleMRClick() {
+    emit mrClicked();
+}
+
+void ButtonWidget::handleACClick() {
+    emit acClicked();
 }

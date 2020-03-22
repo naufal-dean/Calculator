@@ -1,9 +1,11 @@
+acButton.o
 backspaceButton.o
 binaryOpButton.o
 calcButton.o
 commaButton.o
 equalButton.o
 mcButton.o
+mrButton.o
 numButton.o
 opButton.o
 unaryOpButton.o
@@ -19,12 +21,14 @@ mainWidget.o
 screenWidget.o
 main.o
 mainwindow.o
+moc_acButton.o
 moc_backspaceButton.o
 moc_binaryOpButton.o
 moc_calcButton.o
 moc_commaButton.o
 moc_equalButton.o
 moc_mcButton.o
+moc_mrButton.o
 moc_numButton.o
 moc_opButton.o
 moc_unaryOpButton.o

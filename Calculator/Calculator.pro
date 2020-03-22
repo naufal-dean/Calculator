@@ -16,12 +16,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    buttons/acButton.cpp \
     buttons/backspaceButton.cpp \
     buttons/binaryOpButton.cpp \
     buttons/calcButton.cpp \
     buttons/commaButton.cpp \
     buttons/equalButton.cpp \
     buttons/mcButton.cpp \
+    buttons/mrButton.cpp \
     buttons/numButton.cpp \
     buttons/opButton.cpp \
     buttons/unaryOpButton.cpp \
@@ -39,12 +41,14 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    buttons/acButton.h \
     buttons/backspaceButton.h \
     buttons/binaryOpButton.h \
     buttons/calcButton.h \
     buttons/commaButton.h \
     buttons/equalButton.h \
     buttons/mcButton.h \
+    buttons/mrButton.h \
     buttons/numButton.h \
     buttons/opButton.h \
     buttons/unaryOpButton.h \
