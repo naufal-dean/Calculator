@@ -1,7 +1,0 @@
-<map id="OpButton" name="OpButton">
-<area shape="rect" id="node1" title=" " alt="" coords="103,256,200,348"/>
-<area shape="rect" id="node4" href="$class_binary_op_button.html" title=" " alt="" coords="5,396,140,473"/>
-<area shape="rect" id="node5" href="$class_unary_op_button.html" title=" " alt="" coords="165,396,295,473"/>
-<area shape="rect" id="node2" href="$class_calc_button.html" title=" " alt="" coords="98,131,205,208"/>
-<area shape="rect" id="node3" title=" " alt="" coords="101,5,201,83"/>
-</map>
